@@ -1,0 +1,197 @@
+[global_config]
+  window_state = maximise
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  ask_before_closing = never
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#ffffff"
+    background_darkness = 0.95
+    background_type = transparent
+    foreground_color = "#000000"
+    scrollback_lines = 5000
+    palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
+    use_theme_colors = True
+    title_transmit_bg_color = "#dc8add"
+  [[Solarized Dark - Patched]]
+    background_color = "#001e27"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_fg_color = "#ffffff"
+    cursor_bg_color = "#000000"
+    cursor_color_default = False
+    foreground_color = "#708284"
+    scrollback_lines = 5000
+    palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
+    use_theme_colors = True
+    title_transmit_bg_color = "#dc8add"
+[layouts]
+  [[default - old]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+  [[ProvingGrounds - 7]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:29
+      maximised = False
+      fullscreen = False
+      size = 1800, 1055
+      title = pop@kalihost: ~
+      last_active_term = 46f4f7a8-5ded-4d2e-839e-5e5bee5e7af4
+      last_active_window = True
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 522
+      ratio = 0.49714285714285716
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 609
+      ratio = 0.3392757660167131
+    [[[child3]]]
+      type = VPaned
+      parent = child2
+      order = 0
+      position = 258
+      ratio = 0.4990328820116054
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      title = VPN
+      uuid = db518a96-7fa0-43e2-9787-ae0cddf71df2
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      title = server
+      uuid = 2fe1dcda-f39c-474e-84f7-9765a29d3ed1
+    [[[child6]]]
+      type = HPaned
+      parent = child2
+      order = 1
+      position = 584
+      ratio = 0.4928270042194093
+    [[[terminal7]]]
+      type = Terminal
+      parent = child6
+      order = 0
+      profile = default
+      uuid = 845c0dca-02d9-4be4-90ed-09da12e758ba
+    [[[terminal8]]]
+      type = Terminal
+      parent = child6
+      order = 1
+      profile = default
+      uuid = 46f4f7a8-5ded-4d2e-839e-5e5bee5e7af4
+    [[[child9]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 607
+      ratio = 0.3381615598885794
+    [[[terminal10]]]
+      type = Terminal
+      parent = child9
+      order = 0
+      profile = default
+      uuid = 8d8d5a51-a76a-4511-9f12-349590894383
+    [[[child11]]]
+      type = HPaned
+      parent = child9
+      order = 1
+      position = 589
+      ratio = 0.4962089300758214
+    [[[terminal12]]]
+      type = Terminal
+      parent = child11
+      order = 0
+      profile = default
+      uuid = f9084c3a-4b3a-4a81-9f92-9a04ade7ebf3
+      directory = ""
+    [[[terminal13]]]
+      type = Terminal
+      parent = child11
+      order = 1
+      profile = default
+      uuid = 767e5be6-d2a1-4d60-a527-8d96de3264b9
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:29
+      maximised = True
+      fullscreen = False
+      size = 1800, 1055
+      title = pop@kalihost: ~
+      last_active_term = 845c0dca-02d9-4be4-90ed-09da12e758ba
+      last_active_window = True
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 522
+      ratio = 0.49714285714285716
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 609
+      ratio = 0.3392757660167131
+    [[[child3]]]
+      type = VPaned
+      parent = child2
+      order = 0
+      position = 259
+      ratio = 0.5009671179883946
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      title = VPN
+      uuid = db518a96-7fa0-43e2-9787-ae0cddf71df2
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      title = server
+      uuid = 2fe1dcda-f39c-474e-84f7-9765a29d3ed1
+    [[[terminal6]]]
+      type = Terminal
+      parent = child2
+      order = 1
+      profile = default
+      uuid = 845c0dca-02d9-4be4-90ed-09da12e758ba
+    [[[child7]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 607
+      ratio = 0.3381615598885794
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = default
+      uuid = 8d8d5a51-a76a-4511-9f12-349590894383
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      profile = default
+      uuid = f9084c3a-4b3a-4a81-9f92-9a04ade7ebf3
+[plugins]

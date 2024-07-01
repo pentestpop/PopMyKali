@@ -92,4 +92,5 @@ done
 echo " But wait! There\'s more! To add a white text on blue background for your terminal, add this to .zshrc:";
 echo " PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '";
 echo " And make this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
+echo " Don't forget to sync firefox with your +kali account!";
 echo " Hope that all worked!"

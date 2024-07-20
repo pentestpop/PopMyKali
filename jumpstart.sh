@@ -23,6 +23,8 @@ git clone https://github.com/brightio/penelope.git;
 
 git clone https://github.com/antonioCoco/ConPtyShell.git;
 
+git clone https://github.com/diego-treitos/linux-smart-enumeration.git;
+
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
 sudo apt install autorecon burpsuite enum4linux flameshot gobuster netexec nth onesistyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;

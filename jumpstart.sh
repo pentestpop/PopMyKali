@@ -25,6 +25,10 @@ git clone https://github.com/antonioCoco/ConPtyShell.git;
 
 git clone https://github.com/diego-treitos/linux-smart-enumeration.git;
 
+git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
+
+git clone https://github.com/ropnop/kerbrute.git;
+
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
 sudo apt install autorecon burpsuite enum4linux flameshot gobuster netexec nth onesistyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
@@ -94,5 +98,6 @@ done
 echo " But wait! There\'s more! To add a white text on blue background for your terminal, add this to .zshrc:";
 echo " PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '";
 echo " And make this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
+echo " for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Hope that all worked!"

@@ -42,6 +42,9 @@ wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes
 cp /opt/Kali_JumpStart/terminatorconfig ~/.config/terminator/config;
 echo " Solarized Dark - Patched is a decent template for terminator";
 
+# To add a white text on blue background for your terminal, add this to .zshrc:
+echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '" >> ~/.zshrc;
+
 # ASCII art
 octopascii="
                                                                                                        
@@ -94,12 +97,11 @@ octopascii="
 IFS=$'\n'       # Set the Internal Field Separator to newline
 for line in $octopascii; do
     echo "$line"
-    sleep 0.1    # Adjust the sleep duration (in seconds) as needed
+    sleep 0.2    # Adjust the sleep duration (in seconds) as needed
 done
 
-echo " But wait! There\'s more! To add a white text on blue background for your terminal, add this to .zshrc:";
-echo " PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '";
-echo " And make this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
-echo " for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
+echo " But wait! There\'s more!";
+echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
+echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Hope that all worked!"

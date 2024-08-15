@@ -29,6 +29,8 @@ git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
 git clone https://github.com/ropnop/kerbrute.git;
 
+git clone https://github.com/jpillora/chisel;
+
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
 sudo apt install autorecon burpsuite enum4linux flameshot gobuster golang libreoffice netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;

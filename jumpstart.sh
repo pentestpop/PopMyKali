@@ -105,5 +105,5 @@ echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just a
 echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Oh wait, one last thing -";
-sudo updatedb;
+updatedb;
 echo " Hope that all worked!"

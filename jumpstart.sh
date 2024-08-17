@@ -104,6 +104,6 @@ echo " But wait! There\'s more!";
 echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
 echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
 echo " Don't forget to sync firefox with your +kali account!";
-echo " Oh wait, one last thing -";
+echo " Oh wait, one last thing - let's run updatedb so locate works properly.";
 updatedb;
 echo " Hope that all worked!"

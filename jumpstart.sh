@@ -33,7 +33,7 @@ git clone https://github.com/jpillora/chisel;
 
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
-sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gobuster golang libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
+sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gobuster golang kerberoast libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
 
 # customize terminator
 pip3 install requests;

@@ -32,7 +32,7 @@ git clone https://github.com/jpillora/chisel;
 
 git clone https://github.com/ropnop/kerbrute.git;
 
-# build kerbrute using either arm or AMD
+# build kerbrute using either arm or AMD (edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'")
 echo "For kerbrute, please choose the ARCHS option:"
 echo "1) ARCHS=arm64"
 echo "2) ARCHS=amd64 386"
@@ -127,9 +127,6 @@ for line in $octopascii; do
 done
 
 echo " But wait! There\'s more!";
-# echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
-# echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
-# echo " Also you may need to install sudo apt-get install krb5-user";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Oh wait, one last thing - let's run updatedb so locate works properly.";
 updatedb;

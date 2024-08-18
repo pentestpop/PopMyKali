@@ -29,11 +29,31 @@ git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
 git clone https://github.com/ropnop/kerbrute.git;
 
+
+# Prompt user to choose an option
+echo "For kerbrute, please choose the ARCHS option:"
+echo "1) ARCHS=arm64"
+echo "2) ARCHS=amd64 386"
+read -p "Enter your choice (1 or 2): " choice
+
+# Determine the replacement text based on the user's choice
+if [ "$choice" == "1" ]; then
+    replacement="ARCHS=arm64"
+elif [ "$choice" == "2" ]; then
+    replacement="ARCHS=amd64 386"
+else
+    echo "Invalid choice. Exiting."
+    exit 1
+fi
+
+# Use sed to replace the second line in the file
+sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
+
 git clone https://github.com/jpillora/chisel;
 
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
-sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gobuster golang kerberoast libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
+sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
 
 # customize terminator
 pip3 install requests;
@@ -101,9 +121,10 @@ for line in $octopascii; do
 done
 
 echo " But wait! There\'s more!";
-echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
-echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
-echo " Also you may need to install sudo apt-get install krb5-user";
+# echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
+# echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
+cd /opt/kerbrute && sudo make linux;
+# echo " Also you may need to install sudo apt-get install krb5-user";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Oh wait, one last thing - let's run updatedb so locate works properly.";
 updatedb;

@@ -7,6 +7,7 @@ apt update;
 
 apt full-upgrade -y;
 
+#install github repositories
 cd /opt;
 
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git;
@@ -27,10 +28,11 @@ git clone https://github.com/diego-treitos/linux-smart-enumeration.git;
 
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
+git clone https://github.com/jpillora/chisel;
+
 git clone https://github.com/ropnop/kerbrute.git;
 
-
-# Prompt user to choose an option
+# build kerbrute using either arm or AMD
 echo "For kerbrute, please choose the ARCHS option:"
 echo "1) ARCHS=arm64"
 echo "2) ARCHS=amd64 386"
@@ -49,7 +51,8 @@ fi
 # Use sed to replace the second line in the file
 sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 
-git clone https://github.com/jpillora/chisel;
+#building the kerbrute file
+cd /opt/kerbrute && sudo make linux;
 
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
 
@@ -64,6 +67,9 @@ echo " Solarized Dark - Patched is a decent template for terminator";
 
 # To add a white text on blue background for your terminal, add this to .zshrc:
 echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '" >> ~/.zshrc;
+
+#creating an alias for kerbrute
+echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 
 # ASCII art
 octopascii="
@@ -123,7 +129,6 @@ done
 echo " But wait! There\'s more!";
 # echo " Consider adding this custom shortcut: bash -c \'flameshot gui\' or just add Shift+Alt+P to open it.";
 # echo " And for kerbrute - edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'";
-cd /opt/kerbrute && sudo make linux;
 # echo " Also you may need to install sudo apt-get install krb5-user";
 echo " Don't forget to sync firefox with your +kali account!";
 echo " Oh wait, one last thing - let's run updatedb so locate works properly.";

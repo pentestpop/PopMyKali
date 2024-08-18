@@ -54,7 +54,12 @@ sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 #building the kerbrute file
 cd /opt/kerbrute && sudo make linux;
 
+#creating an alias for kerbrute
+echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
+
+# adding nmapAutomator so I can run it just by calling the binary
 ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
+echo "alias nmapAutomator='nmapAutomator.sh'" >> ~/.zshrc;
 
 sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
 
@@ -67,9 +72,6 @@ echo " Solarized Dark - Patched is a decent template for terminator";
 
 # To add a white text on blue background for your terminal, add this to .zshrc:
 echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '" >> ~/.zshrc;
-
-#creating an alias for kerbrute
-echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 
 # ASCII art
 octopascii="

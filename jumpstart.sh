@@ -30,8 +30,13 @@ git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
 git clone https://github.com/jpillora/chisel;
 
-git clone https://github.com/ropnop/kerbrute.git;
+# Liggy
+git clone https://github.com/cagrigsby/liggy.git;
+# add a symbolic link
+sudo ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
 
+#Kerbrute
+git clone https://github.com/ropnop/kerbrute.git;
 # build kerbrute using either arm or AMD (edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'")
 echo "For kerbrute, please choose the ARCHS option:"
 echo "1) ARCHS=arm64"

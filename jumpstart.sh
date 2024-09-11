@@ -33,7 +33,7 @@ git clone https://github.com/jpillora/chisel;
 # Liggy
 git clone https://github.com/cagrigsby/liggy.git;
 # add a symbolic link
-sudo ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
+sudo chmod +x /opt/liggy/liggy.sh && ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
 
 #Kerbrute
 git clone https://github.com/ropnop/kerbrute.git;

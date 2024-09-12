@@ -32,6 +32,11 @@ git clone https://github.com/jpillora/chisel;
 
 git clone https://github.com/cagrigsby/autoNTDS.git;
 
+# SpeedySMB
+git clone https://github.com/cagrigsby/speedysmb/tree/main
+# add a symbolic link
+sudo chmod +x /opt/speedysmb/speedysmb.sh && ln -s /opt/speedysmb/speedysmb.sh /usr/local/bin/speedysmb;
+
 # Liggy
 git clone https://github.com/cagrigsby/liggy.git;
 # add a symbolic link
@@ -65,7 +70,7 @@ cd /opt/kerbrute && sudo make linux;
 echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 
 # adding nmapAutomator so I can run it just by calling the binary
-ln -s /nmapAutomator/nmapAutomator.sh /usr/local/bin/;
+ln -s /opt/nmapAutomator/nmapAutomator.sh /usr/local/bin/nmapAutomator;
 echo "alias nmapAutomator='nmapAutomator.sh'" >> ~/.zshrc;
 
 sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;

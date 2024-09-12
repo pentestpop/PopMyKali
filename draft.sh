@@ -9,6 +9,7 @@ cd ~/server;
 repositories=(
     "DominicBreuker/pspy pspy64"
     "peass-ng/PEASS-ng winPEASx64.exe"
+    "peass-ng/PEASS-ng winPEASx86.exe"
 )
 
 # Function to download the latest binary

@@ -7,6 +7,9 @@ apt update;
 
 apt full-upgrade -y;
 
+#install beloved binaries
+sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
+
 #install github repositories
 cd /opt;
 
@@ -32,19 +35,11 @@ git clone https://github.com/jpillora/chisel;
 
 git clone https://github.com/cagrigsby/autoNTDS.git;
 
-# SpeedySMB
-git clone https://github.com/cagrigsby/speedysmb/tree/main
-# add a symbolic link
-sudo chmod +x /opt/speedysmb/speedysmb.sh && ln -s /opt/speedysmb/speedysmb.sh /usr/local/bin/speedysmb;
-
-# Liggy
-git clone https://github.com/cagrigsby/liggy.git;
-# add a symbolic link
-sudo chmod +x /opt/liggy/liggy.sh && ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
-
-#Kerbrute
+#Kerbrute part 1
 git clone https://github.com/ropnop/kerbrute.git;
-# build kerbrute using either arm or AMD (edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'")
+
+# NOTE: The next few commands are specific to my preference and should be removed or altered for other users. 
+# Kerbrute part 2 - build kerbrute using either arm or AMD (edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'")
 echo "For kerbrute, please choose the ARCHS option:"
 echo "1) ARCHS=arm64"
 echo "2) ARCHS=amd64 386"
@@ -73,7 +68,15 @@ echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 ln -s /opt/nmapAutomator/nmapAutomator.sh /usr/local/bin/nmapAutomator;
 echo "alias nmapAutomator='nmapAutomator.sh'" >> ~/.zshrc;
 
-sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
+# SpeedySMB
+git clone https://github.com/cagrigsby/speedysmb/tree/main;
+# add a symbolic link
+sudo chmod +x /opt/speedysmb/speedysmb.sh && ln -s /opt/speedysmb/speedysmb.sh /usr/local/bin/speedysmb;
+
+# Liggy
+git clone https://github.com/cagrigsby/liggy.git;
+# add a symbolic link
+sudo chmod +x /opt/liggy/liggy.sh && ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
 
 # customize terminator
 pip3 install requests;

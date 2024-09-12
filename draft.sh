@@ -1,8 +1,13 @@
 #This is a working draft for creating a folder useful binaries to transfer to a target
 mkdir ~/server;
 cd ~/server;
-#THis section downloads the latest precompiled releases from the named repo and binary
+#This section downloads the latest precompiled releases from the named repo and binary
 #!/bin/bash
+
+#Colors
+# Define color codes
+PINK='\033[35m'
+RESET='\033[0m'
 
 # Define repositories and their binary filenames here
 # Format: "owner/repo binary_filename"
@@ -37,7 +42,7 @@ download_latest_binary() {
         echo "Downloading $binary_name from $download_url"
         wget -O "$binary_name" "$download_url"
     else
-        echo "No exact match found for $binary_name in repository $repo"
+        echo "${PINK}No exact match found for $binary_name in repository $repo ${RESET}"
     fi
 }
 

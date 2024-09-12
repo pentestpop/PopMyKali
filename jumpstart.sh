@@ -30,6 +30,8 @@ git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
 git clone https://github.com/jpillora/chisel;
 
+git clone https://github.com/cagrigsby/autoNTDS.git;
+
 # Liggy
 git clone https://github.com/cagrigsby/liggy.git;
 # add a symbolic link

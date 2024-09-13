@@ -58,3 +58,4 @@ done
 cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 ~/server;
 cp /usr/share/windows-resources/binaries/nc.exe ~/server/nc.exe;
 cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe ~/server/mimikatz64.exe;
+cp /opt/linux-smart-enumeration/lse.sh ~/server/lse.sh;

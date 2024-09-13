@@ -8,7 +8,7 @@ apt update;
 apt full-upgrade -y;
 
 #install beloved binaries
-sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
+sudo apt install autorecon bloodhound burpsuite enum4linux flameshot gccgo-go gobuster golang golang-go hekatomb kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip remmina rlwrap smbmap terminator wpscan;
 
 #install github repositories
 cd /opt;

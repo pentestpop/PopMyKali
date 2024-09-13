@@ -15,6 +15,8 @@ repositories=(
     "DominicBreuker/pspy pspy64"
     "peass-ng/PEASS-ng winPEASx64.exe"
     "peass-ng/PEASS-ng winPEASx86.exe"
+    "nicocha30/ligolo-ng ligolo-ng_agent_0.7.2-alpha_windows_amd64.zip"
+    "nicocha30/ligolo-ng ligolo-ng_agent_0.7.2-alpha_linux_amd64.tar.gz"
 )
 
 # Function to download the latest binary
@@ -59,3 +61,8 @@ cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 ~/server;
 cp /usr/share/windows-resources/binaries/nc.exe ~/server/nc.exe;
 cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe ~/server/mimikatz64.exe;
 cp /opt/linux-smart-enumeration/lse.sh ~/server/lse.sh;
+cp /usr/share/peass/linpeas/linpeas.sh ~/server/linpeas.sh;
+cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 ~/server/PowerUp.ps1;
+
+#create a test file
+echo test > ~/server/test.txt;

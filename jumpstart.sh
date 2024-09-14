@@ -31,8 +31,6 @@ git clone https://github.com/diego-treitos/linux-smart-enumeration.git;
 
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
-git clone https://github.com/jpillora/chisel;
-
 git clone https://github.com/cagrigsby/autoNTDS.git;
 
 git clone https://github.com/antonioCoco/ConPtyShell.git;

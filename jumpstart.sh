@@ -35,6 +35,8 @@ git clone https://github.com/jpillora/chisel;
 
 git clone https://github.com/cagrigsby/autoNTDS.git;
 
+git clone https://github.com/antonioCoco/ConPtyShell.git;
+
 #Kerbrute part 1
 git clone https://github.com/ropnop/kerbrute.git;
 

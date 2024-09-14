@@ -70,15 +70,10 @@ echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 ln -s /opt/nmapAutomator/nmapAutomator.sh /usr/local/bin/nmapAutomator;
 echo "alias nmapAutomator='nmapAutomator.sh'" >> ~/.zshrc;
 
-# SpeedySMB
-git clone https://github.com/cagrigsby/speedysmb/tree/main;
-# add a symbolic link
-sudo chmod +x /opt/speedysmb/speedysmb.sh && ln -s /opt/speedysmb/speedysmb.sh /usr/local/bin/speedysmb;
-
-# Liggy
-git clone https://github.com/cagrigsby/liggy.git;
-# add a symbolic link
-sudo chmod +x /opt/liggy/liggy.sh && ln -s /opt/liggy/liggy.sh /usr/local/bin/liggy;
+# PopScripts
+git clone https://github.com/cagrigsby/PopScripts.git
+# PopScripts symbolic links
+sudo chmod +x /opt/PopScripts/link.sh && sudo /opt/PopScripts/link.sh;
 
 # customize terminator
 pip3 install requests;

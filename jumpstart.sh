@@ -70,7 +70,7 @@ echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
 
 # adding nmapAutomator so I can run it just by calling the binary
 ln -s /opt/nmapAutomator/nmapAutomator.sh /usr/local/bin/nmapAutomator;
-echo "alias nmapAutomator='nmapAutomator.sh'" >> ~/.zshrc;
+echo "alias nmapAutomator='nmapAutomator'" >> ~/.zshrc;
 
 # PopScripts
 git clone https://github.com/cagrigsby/PopScripts.git

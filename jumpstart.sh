@@ -69,17 +69,13 @@ sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 #building the kerbrute file
 cd /opt/kerbrute && sudo make linux;
 
-#creating an alias for kerbrute
-echo "alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'" >> ~/.zshrc;
-
-# adding nmapAutomator so I can run it just by calling the binary
-ln -s /opt/nmapAutomator/nmapAutomator.sh /usr/local/bin/nmapAutomator;
-echo "alias nmapAutomator='nmapAutomator'" >> ~/.zshrc;
-
 # PopScripts
-git clone https://github.com/cagrigsby/PopScripts.git
+git clone https://github.com/cagrigsby/PopScripts.git /opt/.
 # PopScripts symbolic links
 sudo chmod +x /opt/PopScripts/link.sh && sudo /opt/PopScripts/link.sh;
+
+# append custom aliases etc. to .zshrc
+cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc
 
 # customize terminator
 pip3 install requests;

@@ -1,0 +1,25 @@
+# pop aliases
+alias kerbrute='/opt/kerbrute/dist/kerbrute_linux_arm64'
+alias venv='python3 -m venv myenv && source myenv/bin/activate'
+alias ls='ls -A -F --group-directories-first --sort=extension --color=always'
+alias gitupdate='find /opt -maxdepth 1 -type d -exec bash -c "cd \"{}\"; git pull;" \;'
+alias grep='grep --color=auto'
+
+# pop functions
+rcatch() { rlwrap nc -lvnp "${1:-443}"; }
+function mkcd() { mkdir -p "$1" && cd "$1"; }
+
+# custom vars
+myip=$(ip addr show tun0 | grep -oP 'inet \K[\d.]+')
+smbAddress="\\\\\\${myip}\\share"
+
+# shared history config
+setopt inc_append_history
+#setopt share_history
+
+# custom history search by entered command
+bindkey "^[OA" history-beginning-search-backward
+bindkey "^[OB" history-beginning-search-forward
+
+# shift+enter moves to end of command
+bindkey '^[OM' end-of-line

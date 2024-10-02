@@ -41,6 +41,8 @@ git clone https://github.com/cddmp/enum4linux-ng.git;
 
 git clone https://github.com/ivan-sincek/php-reverse-shell.git;
 
+pip install git-dumper;
+
 #Kerbrute part 1
 git clone https://github.com/ropnop/kerbrute.git;
 

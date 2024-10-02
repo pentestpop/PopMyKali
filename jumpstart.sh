@@ -37,6 +37,8 @@ git clone https://github.com/antonioCoco/ConPtyShell.git;
 
 git clone https://github.com/cagrigsby/ARMincursore.git;
 
+git clone https://github.com/cddmp/enum4linux-ng.git;
+
 git clone https://github.com/ivan-sincek/php-reverse-shell.git;
 
 #Kerbrute part 1

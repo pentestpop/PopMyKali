@@ -26,7 +26,7 @@ echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sg
 
 # Set the wallpaper
 # Set the wallpaper image (assuming you want a wallpaper, otherwise skip this part)
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "/opt/PopMyKali/kalilinux-svgrep-com.svg"
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "/opt/PopMyKali/popsonder.svg"
 
 # Set the wallpaper style (stretched)
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/image-style -s 2

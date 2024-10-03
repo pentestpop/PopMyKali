@@ -69,6 +69,20 @@ sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 #building the kerbrute file
 cd /opt/kerbrute && sudo make linux;
 
+# Ask the user if they want to run the other script
+echo "Would you like to optimize your Kali with aliases, terminator config, and PopScripts? Y/N"
+read -p "Enter your choice: " user_input
+
+# Convert input to lowercase and check if it's 'y' or 'yes'
+if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
+    echo "Running the optimization script..."
+    # Replace 'optimize_script.sh' with the actual path to the script you want to run
+    sudo ./poptimize.sh
+else
+    echo "Skipping optimization."
+fi
+
+
 # PopScripts
 git clone https://github.com/cagrigsby/PopScripts.git /opt/.
 # PopScripts symbolic links

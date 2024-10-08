@@ -43,6 +43,8 @@ git clone https://github.com/ivan-sincek/php-reverse-shell.git;
 
 git clone https://github.com/arthaud/git-dumper.git;
 
+git clone https://github.com/pentestpop/verybasicenum.git;
+
 #Kerbrute part 1
 git clone https://github.com/ropnop/kerbrute.git;
 

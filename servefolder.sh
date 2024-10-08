@@ -65,6 +65,9 @@ cp /opt/linux-smart-enumeration/lse.sh ~/server/lse.sh;
 cp /usr/share/peass/linpeas/linpeas.sh ~/server/linpeas.sh;
 cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 ~/server/PowerUp.ps1;
 cp /opt/ConPtyShell/Invoke-ConPtyShell.ps1 ~/server/Invoke-ConPtyShell.ps1;
+cp /opt/verybasicenum/vbenum.bat ~/server/vbenum.bat;
+cp /opt/verybasicenum/vbenum.ps1 ~/server/vbenum.ps1;
+cp /opt/verybasicenum/vbenum.sh ~/server/vbenum.sh;
 
 #create a test file
 echo test > ~/server/test.txt;

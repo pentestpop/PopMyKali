@@ -14,6 +14,9 @@ cp /opt/PopMyKali/orville.jpg ~/Pictures/orville.jpg;
 # create a folder with useful scripts to run a server from
 /opt/PopScripts/servefolder.sh;
 
+# create a symlink for verybasicnamp/vbnmap.sh
+ln -s /opt/verybasicenum/vbnmap.sh /usr/local/bin/vbnmap;
+
 # customize terminator
 pip3 install requests;
 mkdir -p $HOME/.config/terminator/plugins;

@@ -15,6 +15,7 @@ cp /opt/PopMyKali/orville.jpg ~/Pictures/orville.jpg;
 /opt/PopScripts/servefolder.sh;
 
 # create a symlink for verybasicnamp/vbnmap.sh
+chmod +x /opt/verybasicenum/vbnmap.sh;
 ln -s /opt/verybasicenum/vbnmap.sh /usr/local/bin/vbnmap;
 
 # customize terminator

@@ -83,3 +83,5 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
 else
     echo "Skipping poptimization."
 fi
+
+echo "Don't forget to download the latest ILSpy binary here: https://github.com/icsharpcode/ILSpy/releases"; #figure out how to automate later

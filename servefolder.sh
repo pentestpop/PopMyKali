@@ -18,6 +18,7 @@ repositories=(
     "nicocha30/ligolo-ng ligolo-ng_agent_0.7.2-alpha_windows_amd64.zip"
     "nicocha30/ligolo-ng ligolo-ng_agent_0.7.2-alpha_linux_amd64.tar.gz"
     "faustinoaq/sswws ssws.zip"
+    "AlessandroZ/LaZagne LaZagne.exe"
 )
 
 # Function to download the latest binary

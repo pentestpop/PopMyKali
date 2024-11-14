@@ -6,7 +6,7 @@ alias gitupdate='find /opt -maxdepth 1 -type d -exec bash -c "cd \"{}\"; git pul
 alias grep='grep --color=auto'
 
 # pop functions
-rcatch() { rlwrap nc -lvnp "${1:-443}"; }
+catch() { rlwrap nc -lvnp "${1:-443}"; }
 function mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # custom vars

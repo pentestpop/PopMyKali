@@ -9,7 +9,8 @@ chmod +x /opt/PopScripts/link.sh && /opt/PopScripts/link.sh;
 cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
 
 # copy orville.jpg to ~/Pictures/. so you have a test photo
-cp /opt/PopMyKali/orville.jpg ~/Pictures/orville.jpg;
+cp /opt/PopMyKali/images/Sample.jpg ~/Pictures/Sample.jpg;
+cp /opt/PopMyKali/images/Sample.png ~/Pictures/Sample.png;
 
 # create a folder with useful scripts to run a server from
 /opt/PopScripts/servefolder.sh;

@@ -15,10 +15,6 @@ cd /opt;
 
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git;
 
-git clone https://github.com/21y4d/nmapAutomator.git;
-
-git clone https://github.com/pentestmonkey/unix-privesc-check.git;
-
 git clone https://github.com/Flangvik/SharpCollection.git;
 
 git clone https://github.com/61106960/adPEAS.git;

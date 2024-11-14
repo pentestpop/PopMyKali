@@ -10,7 +10,7 @@ catch() { rlwrap nc -lvnp "${1:-443}"; }
 function mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # custom vars
-myip=$(ip addr show tun0 | grep -oP 'inet \K[\d.]+')
+#myip=$(ip addr show tun0 | grep -oP 'inet \K[\d.]+')
 smbAddress="\\\\\\${myip}\\share"
 
 # shared history config

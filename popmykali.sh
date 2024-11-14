@@ -8,7 +8,7 @@ apt update;
 apt full-upgrade -y;
 
 #install beloved binaries
-sudo apt install autorecon bloodhound burpsuite enum4linux gccgo-go gobuster golang golang-go hekatomb kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan wsgidav;
+apt install autorecon bloodhound burpsuite enum4linux gccgo-go gobuster golang golang-go hekatomb kerberoast krb5-user libreoffice neo4j netexec nth onesixtyone peass pspy python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan wsgidav;
 
 #install github repositories
 cd /opt;
@@ -62,10 +62,10 @@ else
 fi
 
 # Use sed to replace the second line in the file
-sudo sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
+sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 
 #building the kerbrute file
-cd /opt/kerbrute && sudo make linux;
+cd /opt/kerbrute && make linux;
 
 # Ask the user if they want to run the other script
 echo "Would you like to optimize your Kali with aliases, terminator config, and PopScripts? Y/N"
@@ -75,7 +75,7 @@ read -p "Enter your choice: " user_input
 if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     echo "Running the optimization script..."
     # Replace 'optimize_script.sh' with the actual path to the script you want to run
-    sudo /opt/PopScripts/poptimize.sh
+    opt/PopScripts/poptimize.sh
 else
     echo "Skipping poptimization."
 fi

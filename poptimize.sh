@@ -3,7 +3,7 @@
 # PopScripts
 git clone https://github.com/cagrigsby/PopScripts.git /opt/.
 # PopScripts symbolic links
-sudo chmod +x /opt/PopScripts/link.sh && sudo /opt/PopScripts/link.sh;
+chmod +x /opt/PopScripts/link.sh && /opt/PopScripts/link.sh;
 
 # append custom aliases etc. to .zshrc
 cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;

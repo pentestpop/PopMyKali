@@ -1,5 +1,5 @@
 # PopMyKali
-A script to install everything I want on a fresh Kali image. inspired by the [PimpMyKali}(https://github.com/Dewalt-arch/pimpmykali) script. 
+A script to install everything I want on a fresh Kali image. inspired by the [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali) script. 
 
 ## Basic Usage (PopMyKali)
 

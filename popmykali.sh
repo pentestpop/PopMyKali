@@ -75,7 +75,7 @@ read -p "Enter your choice: " user_input
 if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     echo "Running the optimization script..."
     # Replace 'optimize_script.sh' with the actual path to the script you want to run
-    opt/PopScripts/poptimize.sh
+    /opt/PopScripts/poptimize.sh
 else
     echo "Skipping poptimization."
 fi

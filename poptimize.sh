@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# PopScripts
-git clone https://github.com/cagrigsby/PopScripts.git /opt/.
+# PopScripts - fix this because it's trying to overwrite the directory
+sudo git clone https://github.com/cagrigsby/PopScripts.git /opt/.
 # PopScripts symbolic links
-chmod +x /opt/PopScripts/link.sh && /opt/PopScripts/link.sh;
+chmod +x /opt/PopMyKali/link.sh && /opt/PopScripts/link.sh;
 
 # append custom aliases etc. to .zshrc
 cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
 
 # copy orville.jpg to ~/Pictures/. so you have a test photo
-cp /opt/PopMyKali/images/Sample.jpg ~/Pictures/Sample.jpg;
-cp /opt/PopMyKali/images/Sample.png ~/Pictures/Sample.png;
+cp /opt/PopMyKali/samples/Sample.jpg ~/Pictures/Sample.jpg;
+cp /opt/PopMyKali/samples/Sample.png ~/Pictures/Sample.png;
 
 # create a folder with useful scripts to run a server from
 /opt/PopScripts/servefolder.sh;

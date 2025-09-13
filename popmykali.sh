@@ -3,12 +3,16 @@
 #install tools
 echo "Let's get it poppin";
 
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg;
+sudo apt-get install apt-transport-https;
+echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
+
 apt update;
 
 apt full-upgrade -y;
 
 #install beloved binaries
-apt install autorecon burpsuite enum4linux gccgo-go gobuster golang golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass pspy python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan wsgidav;
+sudo apt install autorecon burpsuite enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
 
 #install github repositories
 cd /opt;
@@ -65,11 +69,23 @@ fi
 sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 
 #building the kerbrute file
-cd /opt/kerbrute && make linux;
+sudo /opt/kerbrute/make linux;
+sudo cp /opt/kerbrute/dist/kerbrute_linux_arm64 /usr/local/bin/kerbrute; 
+echo "export GOPATH=$HOME/go" >> ~/.zshrc;
+echo "export PATH=$PATH:/usr/lib/go/bin:$GOPATH/bin" >> ~/.zshrc; 
+
+# ILSpy - archived so this is always the latest binary
+mkdir /opt/ILSpy;
+wget -O /opt/ILSpy https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.2-rc/Linux.arm64.Release.zip;
+unzip /opt/ILspy/Linux.arm64.Release.zip;
+unzip /opt/ILSpy/ILSpy-linux-arm64-Release.zip;
+chmod +x /opt/ILSpy/artifacts/linux-arm64/ILSpy;
+echo "alias ILSpy= '/opt/ILSpy/artifacts/linux-arm64/ILSpy'" >> ~/.zshrc;
+
 
 # Ask the user if they want to run the other script
-echo "Would you like to optimize your Kali with aliases, terminator config, and PopScripts? Y/N"
-read -p "Enter your choice: " user_input
+echo "Would you like to optimize your Kali with aliases, terminator config, and PopScripts? Y/N";
+read -p "Enter your choice: " user_input;
 
 # Convert input to lowercase and check if it's 'y' or 'yes'
 if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
@@ -81,3 +97,7 @@ else
 fi
 
 echo "Don't forget to download the latest ILSpy binary here: https://github.com/icsharpcode/ILSpy/releases"; #figure out how to automate later
+echo "If pspy doesn't install then run
+1. mkdir /opt/pspy
+2. wget -O /opt/pspy/. https://github.com/DominicBreuker/pspy/releases/latest/download/pspy64 
+3. chmod +x /opt/pspy/pspy64"

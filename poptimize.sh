@@ -13,7 +13,7 @@ cp /opt/PopMyKali/samples/Sample.jpg ~/Pictures/Sample.jpg;
 cp /opt/PopMyKali/samples/Sample.png ~/Pictures/Sample.png;
 
 # create a folder with useful scripts to run a server from
-/opt/PopScripts/servefolder.sh;
+bash /opt/PopMyKali/servefolder.sh;
 
 # create a symlink for verybasicnamp/vbnmap.sh
 chmod +x /opt/verybasicenum/vbnmap.sh;

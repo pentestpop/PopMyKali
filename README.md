@@ -8,7 +8,6 @@ Clone this repositiory into your `/opt` directory and run ./popmykali.sh. This s
 ### Kali Package Manager
 I have a script that I run on fresh Kali spinups, and these are the tools I tend to install on top of vanilla Kali. All of these can be installed with `sudo apt install $name`:
 - [autorecon](https://github.com/Tib3rius/AutoRecon) - network reconnaissance tool which performs automated enumeration of services, explicitly written by Tib3rius for CTFs and other penetration testing environments
-- [bloodhound](https://www.kali.org/tools/bloodhound/) - for visualizing Active Directory information  
 - [bloodhound.py](https://www.kali.org/tools/bloodhound.py/) - for collecting `.json` files for bloodhound to ingest remotely
 - [burpsuite](https://www.kali.org/tools/burpsuite/) - for performing security testing of web applications , through editing HTTP requests for example
 - [enum4linux](https://www.kali.org/tools/enum4linux/) - a tool for enumerating information from Windows and Samba systems remotely
@@ -19,14 +18,13 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [kerberoast](https://www.kali.org/tools/kerberoast/) - for kerberoasting, though you can probably just use a combination of other tools, impacket in particular 
 - [krb5-user](https://packages.debian.org/bullseye/krb5-user) - this package contains the basic programs to authenticate to MIT Kerberos
 - [libreoffice](https://www.libreoffice.org/) - FOSS office suite 
-- [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound 
 - [netexec](https://www.kali.org/tools/netexec/) - includes nxc, the updated version of crackmapexec
 - [name-that-hash](https://www.kali.org/tools/name-that-hash/)- or nth, a hash identifier through either file or text 
 - [onesixtyone](https://www.kali.org/tools/onesixtyone/) - a simple SNMP scanner, particularly useful for identifying community strings
 - [peass](https://www.kali.org/tools/peass-ng/) - well-known privilege escalation scripts for Windows and Linux (and MacOS)
 - [pspy](https://www.kali.org/tools/pspy/)- a command line tool designed to snoop on processes without need for root permissions. You'll want to run a binary on target machines.  
 - [python3-ldapdomaindump](https://www.kali.org/tools/python-ldapdomaindump/) - Active Directory information dumper via LDAP
-- python3-pip(https://www.kali.org/tools/python-pip/#python3-pip) - Python3 package installer
+- [python3-pip](https://www.kali.org/tools/python-pip/#python3-pip) - Python3 package installer
 - [python3-venv](https://docs.python.org/3/library/venv.html) - Python3 package for creating virtual environments, in case you need to briefly use some dependencies that might conflict with your installed libraries 
 - [remmina](https://remmina.org/) - an RDP client, alternative to xfreerdp when it didn't want to work for whatever reason
 - [rlwrap](https://github.com/hanslub42/rlwrap) - a 'readline wrapper', a small utility that uses the [GNU Readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library to allow the editing of keyboard input for any command, making certain shells more stable/easier to use. 
@@ -35,6 +33,12 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [terminator](https://gnome-terminator.org/) - a simple to use terminal emulator 
 - [wpscan](https://www.kali.org/tools/wpscan/) - scan a target WordPress URL and enumerate any plugins that are installed
 - [wsgidav](https://www.kali.org/tools/wsgidav/)- a generic and extendable WebDAV server
+
+#### Lately removed
+These have been removed due to changes with bloodhound. 
+- [bloodhound](https://www.kali.org/tools/bloodhound/) - for visualizing Active Directory information
+- [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound   
+
 
 ### GitHub
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)- a ton of useful payloads.

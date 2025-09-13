@@ -1,6 +1,7 @@
 #This is a working draft for creating a folder useful binaries to transfer to a target
-mkdir ~/server;
-cd ~/server;
+# Needs to be fixed bc it's going to home rather that user, but if you run it with sudo then it goes to root
+mkdir /home/server;
+cd /home/server;
 #This section downloads the latest precompiled releases from the named repo and binary
 #!/bin/bash
 

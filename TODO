@@ -12,3 +12,6 @@
     Watch the status bar in the very bottom to see when it's done installing. It should just take a few seconds. Done!
 
 3. Use it by clicking the current syntax highlighting text in the very bottom right of your Sublime Text 3 window. Choose "ANSI", as shown below. You may also choose this from the menus: View --> Syntax --> ANSI.
+
+4. Fix background image and xfce settings which are out of date
+5. fix server folder going to /root/server rather than /home/$user/server

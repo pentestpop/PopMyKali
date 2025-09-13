@@ -1,5 +1,5 @@
 # PopMyKali
-A script to install everything I want on a fresh Kali image, loosely inspired by the [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali) script. 
+A script to install everything I want on a fresh Kali image, inspired by the [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali) script. 
 
 ## Basic Usage (PopMyKali)
 
@@ -37,7 +37,10 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 #### Lately removed
 These have been removed due to changes with bloodhound. 
 - [bloodhound](https://www.kali.org/tools/bloodhound/) - for visualizing Active Directory information
-- [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound   
+- [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound
+- pspy - I have been recieving errors even after updating the apt respository
+- wsgidav - I have been using other tools
+- gcc-go - seemed to have conflicts with golang-go
 
 
 ### GitHub

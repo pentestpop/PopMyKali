@@ -15,3 +15,15 @@
 
 4. Fix background image and xfce settings which are out of date
 5. fix server folder going to /root/server rather than /home/$user/server
+
+
+Add stable version of bloodhound
+- sudo apt update && sudo apt full-upgrade -y
+- sudo apt install -y docker.io docker-compose
+- sudo usermod -aG docker $USER
+- sudo systemctl enable --now docker
+- sudo mkdir -p /opt/bloodhoundce && cd /opt/bloodhoundce
+- sudo wget -q -O docker-compose.yml https://ghst.ly/getbhce
+- sudo docker-compose up -d
+- sudo docker logs bloodhoundce-bloodhound-1 | grep "Initial Password Set To:"
+-- this will give us the password but we need to save it somewhere for later

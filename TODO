@@ -27,3 +27,12 @@ Add stable version of bloodhound
 - sudo docker-compose up -d
 - sudo docker logs bloodhoundce-bloodhound-1 | grep "Initial Password Set To:"
 -- this will give us the password but we need to save it somewhere for later
+-- sudo docker-compose stop or sudo docker-compose start
+-- add this to alias: 
+# Alias to start BloodHound
+alias bh-start='cd /opt/bloodhoundce && sudo docker-compose up -d'
+# Alias to stop BloodHound
+alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
+# Alias to see the running containers
+alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
+

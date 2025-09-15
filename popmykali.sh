@@ -109,9 +109,5 @@ else
     echo "Skipping poptimization."
 fi
 
-echo "If pspy doesn't install then run
-1. mkdir /opt/pspy
-2. wget -P /opt/pspy/. https://github.com/DominicBreuker/pspy/releases/latest/download/pspy64 
-3. chmod +x /opt/pspy/pspy64"
-
-echo "Create a kerbrute symbolic link by running 'sudo cp /opt/kerbrute/dist/kerbrute\$ /usr/local/bin/kerbrute"
+echo "Create a kerbrute symbolic link by running 'sudo cp /opt/kerbrute/dist/kerbrute\$ /usr/local/bin/kerbrute";
+echo "Don't forget to run sudo updatedb"

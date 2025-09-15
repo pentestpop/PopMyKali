@@ -14,7 +14,7 @@
 3. Use it by clicking the current syntax highlighting text in the very bottom right of your Sublime Text 3 window. Choose "ANSI", as shown below. You may also choose this from the menus: View --> Syntax --> ANSI.
 
 4. Fix background image and xfce settings which are out of date
-5. fix server folder going to /root/server rather than /home/$user/server
+5. fix server folder from going to /root/server rather than /home/$user/server if running servefolder.sh with sudo 
 
 
 Add stable version of bloodhound

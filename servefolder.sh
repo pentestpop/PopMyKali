@@ -1,5 +1,5 @@
 #This is a working draft for creating a folder useful binaries to transfer to a target
-# Needs to be fixed bc it's going to home rather that user, but if you run it with sudo then it goes to root
+# Changed to /home/server rather than ~/server because if you run with sudo, it will be /root/server
 mkdir /home/server;
 cd /home/server;
 #This section downloads the latest precompiled releases from the named repo and binary
@@ -60,16 +60,17 @@ done
 
 
 # This section moves existing kali binaries to the appropriate server
-cp /usr/share/windows-resources/powersploit/Recon/PowerView.ps1 ~/server/PowerView.ps1;
-cp /usr/share/windows-resources/binaries/nc.exe ~/server/nc.exe;
-cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe ~/server/mimikatz64.exe;
-cp /opt/linux-smart-enumeration/lse.sh ~/server/lse.sh;
-cp /usr/share/peass/linpeas/linpeas.sh ~/server/linpeas.sh;
-cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 ~/server/PowerUp.ps1;
-cp /opt/ConPtyShell/Invoke-ConPtyShell.ps1 ~/server/Invoke-ConPtyShell.ps1;
-cp /opt/verybasicenum/vbenum.bat ~/server/vbenum.bat;
-cp /opt/verybasicenum/vbenum.ps1 ~/server/vbenum.ps1;
-cp /opt/verybasicenum/vbenum.sh ~/server/vbenum.sh;
+cp /usr/share/windows-resources/powersploit/Recon/PowerView.ps1 /home/server/PowerView.ps1;
+cp /usr/share/windows-resources/binaries/nc.exe /home/server/nc.exe;
+cp /usr/share/windows-resources/mimikatz/x64/mimikatz.exe /home/server/mimikatz64.exe;
+cp /opt/linux-smart-enumeration/lse.sh /home/server/lse.sh;
+cp /usr/share/peass/linpeas/linpeas.sh /home/server/linpeas.sh;
+cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 /home/server/PowerUp.ps1;
+cp /opt/ConPtyShell/Invoke-ConPtyShell.ps1 /home/server/Invoke-ConPtyShell.ps1;
+cp /opt/verybasicenum/vbenum.bat /home/server/vbenum.bat;
+cp /opt/verybasicenum/vbenum.ps1 /home/server/vbenum.ps1;
+cp /opt/verybasicenum/vbenum.sh /home/server/vbenum.sh;
 
 #create a test file
-echo test > ~/server/test.txt;
+echo 'test' > /home/server/test.txt;
+echo 'the serve folder is now in the /home directory, but you can move it to your user\'s'

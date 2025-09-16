@@ -12,7 +12,7 @@ apt update;
 apt full-upgrade -y;
 
 #install beloved binaries
-sudo apt install autorecon burpsuite dokcer.io docker-compose enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
+sudo apt install autorecon burpsuite docker.io docker-compose enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
 
 #install github repositories
 cd /opt;

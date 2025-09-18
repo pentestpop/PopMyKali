@@ -36,3 +36,4 @@ alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
 # Alias to see the running containers
 alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 
+sudo tar -xvzf rockyou.txt.tar.gz

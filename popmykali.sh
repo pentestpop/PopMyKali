@@ -57,6 +57,9 @@ git clone https://github.com/pentestpop/verybasicenum.git;
 git clone https://github.com/nicocha30/ligolo-ng.git;
 
 #Kerbrute part 1
+printf '\n============================================================\n'
+printf '[+] Building Kerbrute\n'
+printf '============================================================\n\n'
 git clone https://github.com/ropnop/kerbrute.git;
 
 # NOTE: The next few commands are specific to my preference and should be removed or altered for other users. 
@@ -94,6 +97,9 @@ chmod +x /opt/ILSpy/artifacts/linux-arm64/ILSpy;
 echo "alias ILSpy= '/opt/ILSpy/artifacts/linux-arm64/ILSpy'" >> ~/.zshrc;
 
 # Bloodhound via Docker
+printf '\n============================================================\n'
+printf '[+] Setting up Bloodhound on Docker\n'
+printf '============================================================\n\n'
 usermod -aG docker $USER;
 systemctl enable --now docker;
 mkdir -p /opt/bloodhoundce && cd /opt/bloodhoundce;
@@ -107,7 +113,10 @@ alias bh-stop='cd /opt/bloodhoundce && docker-compose stop'
 alias bh-ps='cd /opt/bloodhoundce && docker-compose ps'
 " >> ~/.zshrc
 
-# Ask the user if they want to run the other script
+# Ask the user if they want to additional customizations
+printf '\n============================================================\n'
+printf '[+] Poptimizing...\n'
+printf '============================================================\n\n'
 echo "Would you like to optimize your Kali with aliases, terminator config, and PopScripts? Y/N";
 read -p "Enter your choice: " user_input;
 

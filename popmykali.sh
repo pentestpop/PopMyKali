@@ -31,11 +31,11 @@ git clone https://github.com/diego-treitos/linux-smart-enumeration.git;
 
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git;
 
-git clone https://github.com/cagrigsby/autoNTDS.git;
+git clone https://github.com/pentestpop/autoNTDS.git;
 
 git clone https://github.com/antonioCoco/ConPtyShell.git;
 
-git clone https://github.com/cagrigsby/ARMincursore.git;
+git clone https://github.com/pentestpop/ARMincursore.git;
 
 git clone https://github.com/cddmp/enum4linux-ng.git;
 

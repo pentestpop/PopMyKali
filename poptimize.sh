@@ -11,6 +11,7 @@ cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
 # copy orville.jpg to ~/Pictures/. so you have a test photo
 cp /opt/PopMyKali/samples/Sample.jpg ~/Pictures/Sample.jpg;
 cp /opt/PopMyKali/samples/Sample.png ~/Pictures/Sample.png;
+cp /opt/PopMyKali/samples/orville.jpg ~/Pictures/orville.jpg
 
 # create a folder with useful scripts to run a server from
 bash /opt/PopMyKali/servefolder.sh;
@@ -28,19 +29,6 @@ echo " Solarized Dark - Patched is a decent template for terminator";
 
 # To add a white text on blue background for your terminal, add this to .zshrc:
 echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '" >> ~/.zshrc;
-
-# Set the wallpaper
-# Set the wallpaper image (assuming you want a wallpaper, otherwise skip this part)
-#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "/opt/PopMyKali/popsonder.svg"
-# Set the wallpaper style (stretched)
-#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/image-style -s 2
-# Set the primary color (left side) to #007acc
-#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/rgba1 -t double -t double -t double -t double -s 0.0 -s 0.478 -s 0.8 -s 1.0
-# Set the secondary color (right side) to #f686bd
-#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/rgba2 -t double -t double -t double -t double -s 0.965 -s 0.525 -s 0.741 -s 1.
-# Set the color style to a horizontal gradient
-#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/color-style -s 2
-
 
 # ASCII art
 octopascii="

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#install tools
-echo "Let's get it poppin";
+printf '\n============================================================\n'
+printf '[+] Let\'s get it poppin\n'
+printf '============================================================\n\n'
 
+# Make Sublime Available to Download
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg;
 apt-get install apt-transport-https;
 echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
@@ -12,9 +14,16 @@ apt update;
 apt full-upgrade -y;
 
 #install beloved binaries
+printf '\n============================================================\n'
+printf '[+] Installing some tools:\n'
+printf '============================================================\n\n'
+
 apt install autorecon burpsuite docker.io docker-compose enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
 
 #install github repositories
+printf '\n============================================================\n'
+printf '[+] Installing GitHub repos:\n'
+printf '============================================================\n\n'
 cd /opt;
 
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git;
@@ -104,7 +113,7 @@ read -p "Enter your choice: " user_input;
 if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     echo "Running the optimization script..."
     # Replace 'optimize_script.sh' with the actual path to the script you want to run
-    /opt/PopMyKali/poptimize.sh
+    bash /opt/PopMyKali/poptimize.sh
 else
     echo "Skipping poptimization."
 fi

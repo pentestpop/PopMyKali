@@ -109,5 +109,10 @@ else
     echo "Skipping poptimization."
 fi
 
+printf '\n============================================================\n'
+printf '[+] Unzipping RockYou\n'
+printf '============================================================\n\n'
+gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
+
 echo "Create a kerbrute symbolic link by running ' sudo cp /opt/kerbrute/dist/kerbrute\$ /usr/local/bin/kerbrute";
 echo "Don't forget to run sudo updatedb"

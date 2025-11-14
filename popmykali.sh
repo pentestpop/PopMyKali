@@ -54,6 +54,8 @@ git clone https://github.com/arthaud/git-dumper.git;
 
 git clone https://github.com/pentestpop/verybasicenum.git;
 
+git clone https://github.com/nicocha30/ligolo-ng.git;
+
 #Kerbrute part 1
 git clone https://github.com/ropnop/kerbrute.git;
 
@@ -61,7 +63,7 @@ git clone https://github.com/ropnop/kerbrute.git;
 # Kerbrute part 2 - build kerbrute using either arm or AMD (edit Makefile to say 'ARCHS=arm64' & then 'sudo make linux'")
 echo "For kerbrute, please choose the ARCHS option:"
 echo "1) ARCHS=arm64"
-echo "2) ARCHS=amd64 386"
+echo "2) ARCHS=amd64"
 read -p "Enter your choice (1 or 2): " choice
 
 # Determine the replacement text based on the user's choice

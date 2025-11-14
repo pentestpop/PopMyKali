@@ -3,16 +3,16 @@
 #install tools
 echo "Let's get it poppin";
 
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg;
-sudo apt-get install apt-transport-https;
-echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg;
+apt-get install apt-transport-https;
+echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
 
 apt update;
 
 apt full-upgrade -y;
 
 #install beloved binaries
-sudo apt install autorecon burpsuite docker.io docker-compose enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
+apt install autorecon burpsuite docker.io docker-compose enum4linux gobuster golang-go hekatomb kerberoast krb5-user libreoffice netexec name-that-hash onesixtyone peass python3-pip python3-venv remmina rlwrap smbmap sublime-text terminator wpscan;
 
 #install github repositories
 cd /opt;
@@ -69,8 +69,8 @@ fi
 sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile;
 
 #building the kerbrute file
-cd /opt/kerbrute/ && sudo make linux;
-# sudo cp /opt/kerbrute/dist/kerbrute_linux_arm64 /usr/local/bin/kerbrute; 
+cd /opt/kerbrute/ && make linux;
+# cp /opt/kerbrute/dist/kerbrute_linux_arm64 /usr/local/bin/kerbrute; 
 echo "export GOPATH=$HOME/go" >> ~/.zshrc;
 echo "export PATH=$PATH:/usr/lib/go/bin:$GOPATH/bin" >> ~/.zshrc; 
 
@@ -89,11 +89,11 @@ mkdir -p /opt/bloodhoundce && cd /opt/bloodhoundce;
 wget -q -O docker-compose.yml https://ghst.ly/getbhce;
 echo"
 # Alias to start BloodHound
-alias bh-start='cd /opt/bloodhoundce && sudo docker-compose up -d'
+alias bh-start='cd /opt/bloodhoundce && docker-compose up -d'
 # Alias to stop BloodHound
-alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
+alias bh-stop='cd /opt/bloodhoundce && docker-compose stop'
 # Alias to see the running containers
-alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
+alias bh-ps='cd /opt/bloodhoundce && docker-compose ps'
 " >> ~/.zshrc
 
 # Ask the user if they want to run the other script
@@ -104,10 +104,10 @@ read -p "Enter your choice: " user_input;
 if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     echo "Running the optimization script..."
     # Replace 'optimize_script.sh' with the actual path to the script you want to run
-    sudo /opt/PopMyKali/poptimize.sh
+    /opt/PopMyKali/poptimize.sh
 else
     echo "Skipping poptimization."
 fi
 
-echo "Create a kerbrute symbolic link by running 'sudo cp /opt/kerbrute/dist/kerbrute\$ /usr/local/bin/kerbrute";
+echo "Create a kerbrute symbolic link by running ' sudo cp /opt/kerbrute/dist/kerbrute\$ /usr/local/bin/kerbrute";
 echo "Don't forget to run sudo updatedb"

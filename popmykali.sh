@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf '\n============================================================\n'
-printf '[+] Let\'s get it poppin\n'
+printf '[+] Lets get it poppin\n'
 printf '============================================================\n\n'
 
 # Make Sublime Available to Download

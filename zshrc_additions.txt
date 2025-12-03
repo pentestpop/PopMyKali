@@ -23,3 +23,11 @@ bindkey "^[OB" history-beginning-search-forward
 
 # shift+enter moves to end of command
 bindkey '^[OM' end-of-line
+
+# Pop Prompt
+PROMPT='%F{#7AE7C7}%B%~%b
+%F{#7AE7C7}%n%# '
+
+# Add time back
+# PROMPT='%F{#7AE7C7}%B%~%b
+# %F{#7AE7C7}%D{%H:%M} %# '

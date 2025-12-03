@@ -24,7 +24,7 @@ ln -s /opt/verybasicenum/vbnmap.sh /usr/local/bin/vbnmap;
 pip install requests;
 mkdir -p $HOME/.config/terminator/plugins;
 wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py";
-cp /opt/PopMyKali/terminatorconfig ~/.config/terminator/config;
+cp /opt/PopMyKali/dotfiles/terminatorconfig ~/.config/terminator/config;
 echo " Solarized Dark - Patched is a decent template for terminator";
 
 # To add a white text on blue background for your terminal, add this to .zshrc:

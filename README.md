@@ -8,6 +8,7 @@ Clone this repositiory into your `/opt` directory and run ./popmykali.sh. This s
 ### Kali Package Manager
 I have a script that I run on fresh Kali spinups, and these are the tools I tend to install on top of vanilla Kali. All of these can be installed with `sudo apt install $name`:
 - [autorecon](https://github.com/Tib3rius/AutoRecon) - network reconnaissance tool which performs automated enumeration of services, explicitly written by Tib3rius for CTFs and other penetration testing environments
+- [bat](https://github.com/sharkdp/bat) - improvment on `cat`
 - [bloodhound.py](https://www.kali.org/tools/bloodhound.py/) - for collecting `.json` files for bloodhound to ingest remotely
 - [burpsuite](https://www.kali.org/tools/burpsuite/) - for performing security testing of web applications , through editing HTTP requests for example
 - [enum4linux](https://www.kali.org/tools/enum4linux/) - a tool for enumerating information from Windows and Samba systems remotely

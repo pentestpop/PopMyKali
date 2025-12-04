@@ -58,7 +58,7 @@ These have been removed due to changes with bloodhound.
 - [Kerbrute](https://github.com/ropnop/kerbrute)- for brute forcing Kerberos.  
 
 ## Advanced Usage (Poptimize)
-After these tools have been installed, the script will then prompt you for whether you want to run an additional script called `poptimize.sh`. This script contains some additional customizations that I personally find useful but are more specific to me:
+After these tools have been installed, the script will then prompt you for whether you want to poptimize your install. This script contains some additional customizations that I personally find useful but are more specific to me:
 1. It clones [PopScripts](https://github.com/cagrigsby/PopScripts) a repo which includes custom scripts I use to make my life easier, and creats symbolic links for these scripts. 
 2. It also clones my [verybasicenum](https://github.com/cagrigsby/verybasicenum), which includes the vanilla nmap script I run on pentest labs as well scripts which run a basic enumeration checklist on target hosts in `.ps1`, `.sh`, and `.bat` formats. It creates a symbolic link for the `vbnmap.sh` so that it can be used with `sudo vbnamp $target`. 
 3. It copies sample images to the ~/images directory to be used for testing during for file upload vulnerabilities. 

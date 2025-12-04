@@ -117,6 +117,11 @@ alias grep='grep --color=auto'
 
 # Pop Functions 
 function mkcd() { mkdir -p "$1" && cd "$1"; }
+mousepad() {
+    # 'command' ensures we run the actual binary and not this function recursively
+    # "$@" expands to all arguments (preserving spaces and quotes)
+    command mousepad "$@" &
+}
 
 # Pop Prompt
 PROMPT='%F{#7AE7C7}%B%~%b

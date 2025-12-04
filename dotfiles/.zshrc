@@ -114,6 +114,7 @@ alias venv='python3 -m venv myenv && source myenv/bin/activate'
 alias ls='ls -A -F --group-directories-first --sort=extension --color=always'
 alias gitupdate='find /opt -maxdepth 1 -type d -exec bash -c "cd \"{}\"; git pull;" \;'
 alias grep='grep --color=auto'
+alias cat='batcat'
 
 # Pop Functions 
 function mkcd() { mkdir -p "$1" && cd "$1"; }

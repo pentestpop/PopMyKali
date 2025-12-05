@@ -36,3 +36,5 @@ alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
 # Alias to see the running containers
 alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 
+Download and install vs-code
+

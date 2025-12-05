@@ -1,0 +1,12 @@
+body {
+  --background-primary: #101935;
+  --background-secondary: #0d142b; /* Slightly darker for sidebars */
+  --text-normal: #EFE6DE;
+  --text-muted: #cde6f5;
+  --interactive-accent: #4BA1DB;
+  --text-accent: #f686bd;
+  --text-selection: #DDCBBD;
+  /* Code blocks */
+  --code-background: #0d142b;
+  --code-normal: #7ae7c7;
+}

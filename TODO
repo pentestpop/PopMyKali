@@ -37,4 +37,4 @@ alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
 alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 
 Download and install vs-code
-
+Move Burp, Terminator, Sublime, VS-Code to panel

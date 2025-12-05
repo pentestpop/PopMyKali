@@ -115,6 +115,11 @@ alias ls='ls -A -F --group-directories-first --sort=extension --color=always'
 alias gitupdate='find /opt -maxdepth 1 -type d -exec bash -c "cd \"{}\"; git pull;" \;'
 alias grep='grep --color=auto'
 alias cat='batcat'
+alias icat='kitty +kitten icat'
+alias ipaddr='curl -s -4 ifconfig.co/json | jq'
+alias ipaddr6='curl -s -6 ifconfig.co/json | jq'
+# alias lsd='lsd --group-dirs=first'
+
 
 # Pop Functions 
 function mkcd() { mkdir -p "$1" && cd "$1"; }

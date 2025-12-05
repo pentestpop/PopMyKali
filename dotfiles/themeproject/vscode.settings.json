@@ -1,4 +1,6 @@
 {
+    "redhat.telemetry.enabled": false
+
     "workbench.colorCustomizations": {
         "editor.background": "#101935",
         "editor.foreground": "#EFE6DE",

@@ -1,12 +1,28 @@
-body {
+/* Apply to both :root and body to override any theme specific settings */
+:root, body, .theme-dark, .theme-light {
+  /* BACKGROUNDS */
   --background-primary: #101935;
-  --background-secondary: #0d142b; /* Slightly darker for sidebars */
-  --text-normal: #EFE6DE;
-  --text-muted: #cde6f5;
-  --interactive-accent: #4BA1DB;
-  --text-accent: #f686bd;
-  --text-selection: #DDCBBD;
-  /* Code blocks */
+  --background-primary-alt: #0d142b;
+  --background-secondary: #0d142b;
+  --background-secondary-alt: #101935;
+  
+  /* TEXT - This acts as the "Cream" override */
+  --text-normal: #EFE6DE; 
+  --text-muted: #cde6f5;  /* Your light cyan */
+  --text-faint: #4BA1DB;  /* Your blue */
+  --text-on-accent: #101935; /* Navy text on bright buttons */
+
+  /* UI ACCENTS */
+  --interactive-accent: #4BA1DB; 
+  --interactive-accent-hover: #7ae7c7;
+  
+  /* CODE BLOCKS */
   --code-background: #0d142b;
-  --code-normal: #7ae7c7;
+  --code-normal: #7ae7c7; /* Mint green for code text */
+  --code-comment: #F6BD60; /* Yellow for comments */
+}
+
+/* Force the cursor color */
+.cm-cursor {
+  border-left-color: #4BA1DB !important;
 }

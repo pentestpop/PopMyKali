@@ -38,6 +38,6 @@ alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 
 1. Download and install vs-code
 2. Move Burp, Terminator, Sublime, VS-Code to panel
-3. 
+3. `curl -LsSf https://astral.sh/uv/install.sh | sh`
 3. `uv tool install git+https://github.com/blacklanternsecurity.com/impacket`
 

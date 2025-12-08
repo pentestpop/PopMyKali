@@ -36,5 +36,8 @@ alias bh-stop='cd /opt/bloodhoundce && sudo docker-compose stop'
 # Alias to see the running containers
 alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 
-Download and install vs-code
-Move Burp, Terminator, Sublime, VS-Code to panel
+1. Download and install vs-code
+2. Move Burp, Terminator, Sublime, VS-Code to panel
+3. 
+3. `uv tool install git+https://github.com/blacklanternsecurity.com/impacket`
+

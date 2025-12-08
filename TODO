@@ -1,21 +1,8 @@
-# Automate the installation of the ANSIescape package, but I am not sure how. THis is to stop Sublime from opening the most recent folder every time. 
-
-1. Install the Package Control package using the Menu (or CTRL+Shift+P):
-
-        Open the Tools menu
-        Select Install Package Control…
-
-2. Use Package Control to install the ANSIescape package:
-
-    Ctrl + Shift + P --> type "install", select "Package Control: Install Package" --> wait a few seconds, and a new search bar will pop up.
-    In the new search bar --> search for "ANSIescape" and select it.
-    Watch the status bar in the very bottom to see when it's done installing. It should just take a few seconds. Done!
-
-3. Use it by clicking the current syntax highlighting text in the very bottom right of your Sublime Text 3 window. Choose "ANSI", as shown below. You may also choose this from the menus: View --> Syntax --> ANSI.
-
+3. https://forum.sublimetext.com/t/disable-automatic-loading-of-last-session/4132/13
+        - This is is to stop Sublime from opening the most recent folder every time. 
+        - Add settings to .config/sublime-text/Packages/User/Preferences.sublime-settings
 4. Fix background image and xfce settings which are out of date
 5. fix server folder from going to /root/server rather than /home/$user/server if running servefolder.sh with sudo 
-
 
 Add stable version of bloodhound
 - sudo apt update && sudo apt full-upgrade -y
@@ -41,5 +28,6 @@ alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 3. `curl -LsSf https://astral.sh/uv/install.sh | sh`
 4. `uv tool install git+https://github.com/blacklanternsecurity.com/impacket`
 5. BLS version of nxc as well
-
+6. signal - https://signal.org/download/linux/
+7. httpx (https://github.com/projectdiscovery/httpx)
 

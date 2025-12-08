@@ -109,6 +109,9 @@ source $ZSH/oh-my-zsh.sh
 # Created by `pipx` on 2025-11-12 18:47:30
 export PATH="$PATH:/home/cgrigsby/.local/bin"
 
+# added manually for HTTPX install https://github.com/projectdiscovery/httpx
+export PATH="/home/pop/go/bin:$PATH"
+
 # Pop Aliases
 alias venv='python3 -m venv myenv && source myenv/bin/activate'
 alias ls='ls -A -F --group-directories-first --sort=extension --color=always'

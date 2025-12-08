@@ -1,4 +1,4 @@
-# Automate the installation of the ANSIescape package, but I am not sure how.
+# Automate the installation of the ANSIescape package, but I am not sure how. THis is to stop Sublime from opening the most recent folder every time. 
 
 1. Install the Package Control package using the Menu (or CTRL+Shift+P):
 

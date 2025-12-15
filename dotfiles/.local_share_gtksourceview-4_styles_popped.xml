@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="popped" name="Popped" version="1.0">
+  <author>Pop</author>
+  <description>A classic Pop theme</description>
+
+  <!-- Base editor colors -->
+  <style name="text" foreground="#ebe0d6" background="#101935"/>
+  <style name="selection" background="#ebe0d6" foreground="#101935"/>
+  <style name="cursor" foreground="#4BA1DB"/>
+  <style name="current-line" background="#1a2447"/>
+  <style name="line-numbers" foreground="#6b7c9e" background="#0d1428"/>
+  <style name="current-line-number" foreground="#ebe0d6" background="#1a2447" bold="true"/>
+  
+  <!-- Bracket matching -->
+  <style name="bracket-match" background="#266dd3" foreground="#ebe0d6"/>
+  <style name="bracket-mismatch" background="#ff5fa5" foreground="#ebe0d6"/>
+
+  <!-- Search -->
+  <style name="search-match" background="#ffcb77" foreground="#101935"/>
+
+  <!-- Comments -->
+  <style name="def:comment" foreground="#6b7c9e" italic="true"/>
+  <style name="def:shebang" foreground="#6b7c9e" italic="true"/>
+  <style name="def:doc-comment-element" foreground="#6b7c9e" italic="true"/>
+
+  <!-- Strings -->
+  <style name="def:string" foreground="#1b998b"/>
+  <style name="def:special-char" foreground="#ffcb77"/>
+  
+  <!-- Keywords and types -->
+  <style name="def:keyword" foreground="#fc9cc2" bold="true"/>
+  <style name="def:statement" foreground="#fc9cc2"/>
+  <style name="def:type" foreground="#cde6f5"/>
+  <style name="def:builtin" foreground="#266dd3"/>
+  
+  <!-- Numbers and constants -->
+  <style name="def:number" foreground="#ffcb77"/>
+  <style name="def:decimal" foreground="#ffcb77"/>
+  <style name="def:base-n-integer" foreground="#ffcb77"/>
+  <style name="def:floating-point" foreground="#ffcb77"/>
+  <style name="def:complex" foreground="#ffcb77"/>
+  <style name="def:boolean" foreground="#ffcb77"/>
+  <style name="def:constant" foreground="#ffcb77"/>
+  
+  <!-- Functions and identifiers -->
+  <style name="def:function" foreground="#266dd3"/>
+  <style name="def:identifier" foreground="#ebe0d6"/>
+  
+  <!-- Operators and special -->
+  <style name="def:operator" foreground="#fc9cc2"/>
+  <style name="def:special-constant" foreground="#ff5fa5"/>
+  <style name="def:preprocessor" foreground="#ff5fa5"/>
+  
+  <!-- Errors and warnings -->
+  <style name="def:error" foreground="#ff5fa5" underline="true"/>
+  <style name="def:warning" foreground="#ffcb77" underline="true"/>
+  <style name="def:note" foreground="#cde6f5"/>
+
+</style-scheme>

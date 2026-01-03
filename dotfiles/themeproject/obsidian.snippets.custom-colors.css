@@ -11,6 +11,7 @@
   --text-muted: #cde6f5;  /* Your cyan */
   --text-faint: #4BA1DB;  /* Your light blue */
   --text-on-accent: #101935; /* Navy text on bright buttons */
+  --bold-color: #FF5FA5; /* Pink color when bold */
 
   /* UI ACCENTS */
   --interactive-accent: #4BA1DB; 

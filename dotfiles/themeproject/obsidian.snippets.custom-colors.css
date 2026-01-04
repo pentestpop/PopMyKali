@@ -1,7 +1,7 @@
 /* Apply to both :root and body to override any theme specific settings */
 :root, body, .theme-dark, .theme-light {
   /* BACKGROUNDS */
-  --background-primary: #101935;
+  --background-primary: #101935; /*0E162F maybe (popped 2) */
   --background-primary-alt: #1c2d5e; #was 0d142b
   --background-secondary: #1c2d5e;
   --background-secondary-alt: #101935;

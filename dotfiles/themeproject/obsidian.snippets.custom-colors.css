@@ -12,6 +12,14 @@
   --text-faint: #4BA1DB;  /* Your light blue */
   --text-on-accent: #101935; /* Navy text on bright buttons */
   --bold-color: #FF5FA5; /* Pink color when bold */
+  --italic-color: #FC9CC2; /* Blush Pink color when italic */
+  --strikethrough-color: #BBDDF2; /* Pale sky when strikethrough */
+  --h1-color: #1B998B; /* Verdigris headers */
+  --h2-color: #1B998B;
+  --h3-color: #1B998B;
+  --h4-color: #1B998B;
+  --h5-color: #1B998B;
+  --h6-color: #1B998B;
 
   /* UI ACCENTS */
   --interactive-accent: #4BA1DB; 

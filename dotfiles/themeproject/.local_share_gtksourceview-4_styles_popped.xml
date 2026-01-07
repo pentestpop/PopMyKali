@@ -24,7 +24,7 @@
   <style name="def:doc-comment-element" foreground="#A39161" italic="true"/>
 
   <!-- Strings -->
-  <style name="def:string" foreground="#054A29"/>
+  <style name="def:string" foreground="#70C2A3"/>
   <style name="def:special-char" foreground="#FC9CC2"/>
   
   <!-- Keywords and types -->

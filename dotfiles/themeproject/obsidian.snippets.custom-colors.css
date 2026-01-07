@@ -1,36 +1,64 @@
-/* Apply to both :root and body to override any theme specific settings */
-:root, body, .theme-dark, .theme-light {
+/* --- DARK THEME SETTINGS --- */
+.theme-dark {
   /* BACKGROUNDS */
-  --background-primary: #010A21; /* Ink Black */
-  --background-primary-alt: #001848; /* Deep Navy */
-  --background-secondary: #02123B; /* Prussian Blue */
-  --background-secondary-alt: #4197D8; /* Blue Bell */
+  --background-primary: #010A21;      /* Ink Black */
+  --background-primary-alt: #001848;  /* Deep Navy */
+  --background-secondary: #02123B;      /* Prussian Blue */
+  --background-secondary-alt: #001848; 
   
-  /* TEXT - This acts as the "Cream" override */
-  --text-normal: #E4D8C9; /* Bone */
-  --text-muted: #FC9CC2;  /* Pink Mist - This is sidebar text */
-  --text-faint: #4197D8;  /* Blue Bell */
-  --text-on-accent: #001848; /* Navy text on bright buttons */
-  --bold-color: #F9629F; /* Rose Kiss */
-  --italic-color: #FC9CC2; /* Pink Mist */
-  --h1-color: #41E2BA; /* Turquoise */
-  --h2-color: #41E2BA; /* Turquoise */
-  --h3-color: #41E2BA; /* Turquoise */
-  --h4-color: #41E2BA; /* Turquoise */
-  --h5-color: #41E2BA; /* Turquoise */
-  --h6-color: #41E2BA; /* Turquoise */
+  /* TEXT */
+  --text-normal: #E4D8C9;      /* Bone/Cream */
+  --text-muted: #FC9CC2;        /* Pink Mist */
+  --text-faint: #4197D8;        /* Blue Bell */
+  --text-on-accent: #001848;    /* Navy */
+  
+  --bold-color: #F9629F;        /* Rose Kiss */
+  --italic-color: #FC9CC2;      /* Pink Mist */
+  
+  /* HEADERS */
+  --h1-color: #41E2BA; --h2-color: #41E2BA; --h3-color: #41E2BA;
+  --h4-color: #41E2BA; --h5-color: #41E2BA; --h6-color: #41E2BA;
 
   /* UI ACCENTS */
-  --interactive-accent: #4197D8; /* Blue Bell */
-  --interactive-accent-hover: #fc9cc2; /* Pink Mist */
+  --interactive-accent: #4197D8;
+  --interactive-accent-hover: #fc9cc2;
   
-  /* CODE BLOCKS */
-  --code-background: #02123B; /* Prussian Blue */
-  --code-normal: #F8F5F1; /* Parchment */
-  --code-comment: #A39161; /* Camel for comments */
+  /* CODE */
+  --code-background: #02123B;
+  --code-normal: #F8F5F1;
 }
 
-/* Force the cursor color */
+/* --- LIGHT THEME SETTINGS --- */
+.theme-light {
+  /* BACKGROUNDS - Using your Parchment/Bone colors */
+  --background-primary: #F8F5F1;      /* Parchment */
+  --background-primary-alt: #E4D8C9;  /* Bone */
+  --background-secondary: #E4D8C9;    /* Bone */
+  --background-secondary-alt: #ADE7FF; /* Light Cyan */
+  
+  /* TEXT - Using your Navy and Deep Blue colors */
+  --text-normal: #001848;      /* Deep Navy */
+  --text-muted: #0068B8;        /* Blue */
+  --text-faint: #4197D8;        /* Blue Bell */
+  --text-on-accent: #F8F5F1;    /* Parchment on Navy */
+  
+  --bold-color: #F9629F;        /* Rose Kiss (Darker Pink) */
+  --italic-color: #054A29;      /* Dark Green for contrast */
+  
+  /* HEADERS - Using your darker ANSI Cyan/Green */
+  --h1-color: #01BAEF; --h2-color: #01BAEF; --h3-color: #01BAEF;
+  --h4-color: #01BAEF; --h5-color: #01BAEF; --h6-color: #01BAEF;
+
+  /* UI ACCENTS */
+  --interactive-accent: #0068B8;
+  --interactive-accent-hover: #01BAEF;
+  
+  /* CODE */
+  --code-background: #E4D8C9;
+  --code-normal: #001848;
+}
+
+/* --- UNIVERSAL OVERRIDES --- */
 .cm-cursor {
-  border-left-color: #FED7E7 !important; /* Petal Frost */
+  border-left-color: #F9629F !important; 
 }

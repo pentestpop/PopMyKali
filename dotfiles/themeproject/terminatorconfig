@@ -11,7 +11,7 @@
     foreground_color = "#E4D8C9"
     scrollback_lines = 5000
     palette = "#001848:#F9629F:#054A29:#A39161:#4197D8:#fc9cc2:#01BAEF:#E4D8C9:#02123B:#FB9DC3:#70C2A3:#EDB88B:#0068B8:#FED7E7:#ADE7FF:#F8F5F1"
-    use_theme_colors = True
+    use_theme_colors = False
     title_transmit_bg_color = "#dc8add"
   [[Solarized Dark - Patched]]
     background_color = "#001e27"

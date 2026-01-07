@@ -2,20 +2,20 @@
     "redhat.telemetry.enabled": false
 
     "workbench.colorCustomizations": {
-        "editor.background": "#101935",
-        "editor.foreground": "#ebe0d6",
-        "editorCursor.foreground": "#4BA1DB",
-        "editor.selectionBackground": "#ebe0d6", 
-        "activityBar.background": "#101935",
-        "sideBar.background": "#101935",
+        "editor.background": "#010A21",
+        "editor.foreground": "#E4D8C9",
+        "editorCursor.foreground": "#4197D8",
+        "editor.selectionBackground": "#E4D8C9", 
+        "activityBar.background": "#02123B",
+        "sideBar.background": "#02123B",
         "terminal.background": "#101935",
-        "terminal.ansiBlack": "#101935",
-        "terminal.ansiRed": "#ff5fa5",
-        "terminal.ansiGreen": "#1b998b",
-        "terminal.ansiYellow": "#ffcb77",
-        "terminal.ansiBlue": "#266dd3",
+        "terminal.ansiBlack": "#001848",
+        "terminal.ansiRed": "#F9629F",
+        "terminal.ansiGreen": "#054A29",
+        "terminal.ansiYellow": "#A39161",
+        "terminal.ansiBlue": "#4197D8",
         "terminal.ansiMagenta": "#fc9cc2",
-        "terminal.ansiCyan": "#cde6f5",
-        "terminal.ansiWhite": "#ebe0d6"
+        "terminal.ansiCyan": "#41E2BA",
+        "terminal.ansiWhite": "#E4D8C9"
     }
 }

@@ -1,37 +1,36 @@
 /* Apply to both :root and body to override any theme specific settings */
 :root, body, .theme-dark, .theme-light {
   /* BACKGROUNDS */
-  --background-primary: #101935; /*0E162F maybe (popped 2) */
-  --background-primary-alt: #1c2d5e; #was 0d142b
-  --background-secondary: #1c2d5e;
-  --background-secondary-alt: #101935;
+  --background-primary: #010A21; /* Ink Black */
+  --background-primary-alt: #001848; /* Deep Navy */
+  --background-secondary: #02123B; /* Prussian Blue */
+  --background-secondary-alt: #4197D8; /* Blue Bell */
   
   /* TEXT - This acts as the "Cream" override */
-  --text-normal: #ebe0d6; /* almond cream */
-  --text-muted: #cde6f5;  /* Your cyan */
-  --text-faint: #4BA1DB;  /* Your light blue */
-  --text-on-accent: #101935; /* Navy text on bright buttons */
-  --bold-color: #FF5FA5; /* Pink color when bold */
-  --italic-color: #FC9CC2; /* Blush Pink color when italic */
-  /* --strikethrough-color: #BBDDF2;  Pale sky when strikethrough */
-  --h1-color: #1B998B; /* Verdigris headers */
-  --h2-color: #1B998B;
-  --h3-color: #1B998B;
-  --h4-color: #1B998B;
-  --h5-color: #1B998B;
-  --h6-color: #1B998B;
+  --text-normal: #E4D8C9; /* Bone */
+  --text-muted: #41E2BA;  /* Turquoise */
+  --text-faint: #4197D8;  /* Blue Bell */
+  --text-on-accent: #001848; /* Navy text on bright buttons */
+  --bold-color: #F9629F; /* Rose Kiss */
+  --italic-color: #FC9CC2; /* Pink Mist */
+  --h1-color: #41E2BA; /* Turquoise */
+  --h2-color: #41E2BA; /* Turquoise */
+  --h3-color: #41E2BA; /* Turquoise */
+  --h4-color: #41E2BA; /* Turquoise */
+  --h5-color: #41E2BA; /* Turquoise */
+  --h6-color: #41E2BA; /* Turquoise */
 
   /* UI ACCENTS */
-  --interactive-accent: #4BA1DB; 
-  --interactive-accent-hover: #1b998b;
+  --interactive-accent: #4197D8; /* Blue Bell */
+  --interactive-accent-hover: #41E2BA; /* Turquoise */
   
   /* CODE BLOCKS */
-  --code-background: #0d142b;
-  --code-normal: #1b998b; /* Mint green for code text */
-  --code-comment: #ffcb77; /* Yellow for comments */
+  --code-background: #02123B; /* Prussian Blue */
+  --code-normal: #41E2BA; /* Turquoise */
+  --code-comment: #A39161; /* Camel for comments */
 }
 
 /* Force the cursor color */
 .cm-cursor {
-  border-left-color: #4BA1DB !important;
+  border-left-color: #41E2BA !important; /* Turquoise */
 }

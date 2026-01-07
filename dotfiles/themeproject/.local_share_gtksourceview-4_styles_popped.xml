@@ -4,56 +4,56 @@
   <description>A classic Pop theme</description>
 
   <!-- Base editor colors -->
-  <style name="text" foreground="#ebe0d6" background="#101935"/>
-  <style name="selection" background="#ebe0d6" foreground="#101935"/>
-  <style name="cursor" foreground="#4BA1DB"/>
-  <style name="current-line" background="#1a2447"/>
-  <style name="line-numbers" foreground="#6b7c9e" background="#0d1428"/>
-  <style name="current-line-number" foreground="#ebe0d6" background="#1a2447" bold="true"/>
+  <style name="text" foreground="#E4D8C9" background="#010A21"/>
+  <style name="selection" background="#F8F5F1" foreground="#001848"/>
+  <style name="cursor" foreground="#4197D8"/>
+  <style name="current-line" background="#02123B"/>
+  <style name="line-numbers" foreground="#FC9CC2" background="#010A21"/>
+  <style name="current-line-number" foreground="#E4D8C9" background="#001848" bold="true"/>
   
   <!-- Bracket matching -->
-  <style name="bracket-match" background="#266dd3" foreground="#ebe0d6"/>
-  <style name="bracket-mismatch" background="#ff5fa5" foreground="#ebe0d6"/>
+  <style name="bracket-match" background="#4197D8" foreground="#F8F5F1"/>
+  <style name="bracket-mismatch" background="#F9629F" foreground="#F8F5F1"/>
 
   <!-- Search -->
-  <style name="search-match" background="#ffcb77" foreground="#101935"/>
+  <style name="search-match" background="#054A29" foreground="#E4D8C9"/>
 
   <!-- Comments -->
-  <style name="def:comment" foreground="#6b7c9e" italic="true"/>
-  <style name="def:shebang" foreground="#6b7c9e" italic="true"/>
-  <style name="def:doc-comment-element" foreground="#6b7c9e" italic="true"/>
+  <style name="def:comment" foreground="#A39161" italic="true"/>
+  <style name="def:shebang" foreground="#A39161" italic="true"/>
+  <style name="def:doc-comment-element" foreground="#A39161" italic="true"/>
 
   <!-- Strings -->
-  <style name="def:string" foreground="#1b998b"/>
-  <style name="def:special-char" foreground="#ffcb77"/>
+  <style name="def:string" foreground="#054A29"/>
+  <style name="def:special-char" foreground="#FC9CC2"/>
   
   <!-- Keywords and types -->
   <style name="def:keyword" foreground="#fc9cc2" bold="true"/>
   <style name="def:statement" foreground="#fc9cc2"/>
-  <style name="def:type" foreground="#cde6f5"/>
-  <style name="def:builtin" foreground="#266dd3"/>
+  <style name="def:type" foreground="#F8F5F1"/>
+  <style name="def:builtin" foreground="#0068B8"/>
   
   <!-- Numbers and constants -->
-  <style name="def:number" foreground="#ffcb77"/>
-  <style name="def:decimal" foreground="#ffcb77"/>
-  <style name="def:base-n-integer" foreground="#ffcb77"/>
-  <style name="def:floating-point" foreground="#ffcb77"/>
-  <style name="def:complex" foreground="#ffcb77"/>
-  <style name="def:boolean" foreground="#ffcb77"/>
-  <style name="def:constant" foreground="#ffcb77"/>
+  <style name="def:number" foreground="#EDB88B"/>
+  <style name="def:decimal" foreground="#EDB88B"/>
+  <style name="def:base-n-integer" foreground="#EDB88B"/>
+  <style name="def:floating-point" foreground="#EDB88B"/>
+  <style name="def:complex" foreground="#EDB88B"/>
+  <style name="def:boolean" foreground="#EDB88B"/>
+  <style name="def:constant" foreground="#EDB88B"/>
   
   <!-- Functions and identifiers -->
-  <style name="def:function" foreground="#266dd3"/>
-  <style name="def:identifier" foreground="#ebe0d6"/>
+  <style name="def:function" foreground="#41E2BA"/>
+  <style name="def:identifier" foreground="#E4D8C9"/>
   
   <!-- Operators and special -->
   <style name="def:operator" foreground="#fc9cc2"/>
-  <style name="def:special-constant" foreground="#ff5fa5"/>
-  <style name="def:preprocessor" foreground="#ff5fa5"/>
+  <style name="def:special-constant" foreground="#F9629F"/>
+  <style name="def:preprocessor" foreground="#F9629F"/>
   
   <!-- Errors and warnings -->
-  <style name="def:error" foreground="#ff5fa5" underline="true"/>
-  <style name="def:warning" foreground="#ffcb77" underline="true"/>
-  <style name="def:note" foreground="#cde6f5"/>
+  <style name="def:error" foreground="#F9629F" underline="true"/>
+  <style name="def:warning" foreground="#A39161" underline="true"/>
+  <style name="def:note" foreground="#FED7E7"/>
 
 </style-scheme>

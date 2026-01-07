@@ -22,15 +22,15 @@
 
   /* UI ACCENTS */
   --interactive-accent: #4197D8; /* Blue Bell */
-  --interactive-accent-hover: #41E2BA; /* Turquoise */
+  --interactive-accent-hover: #fc9cc2; /* Pink Mist */
   
   /* CODE BLOCKS */
   --code-background: #02123B; /* Prussian Blue */
-  --code-normal: #41E2BA; /* Turquoise */
+  --code-normal: #F8F5F1; /* Parchment */
   --code-comment: #A39161; /* Camel for comments */
 }
 
 /* Force the cursor color */
 .cm-cursor {
-  border-left-color: #41E2BA !important; /* Turquoise */
+  border-left-color: #FED7E7 !important; /* Petal Frost */
 }

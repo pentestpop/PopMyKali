@@ -136,8 +136,15 @@ mousepad() {
 PROMPT='%F{#7AE7C7}%B%~%b
 %F{#7AE7C7}%n%# '
 
+# Custom colors to fix terminator
+ZSH_HIGHLIGHT_STYLES[command]='fg=1'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=1'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=1'
+ZSH_HIGHLIGHT_STYLES[function]='fg=1'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+
 # Add time back
 # PROMPT='%F{#7AE7C7}%B%~%b
 # %F{#7AE7C7}%D{%H:%M} %# '
 
-
+source <(fzf --zsh)

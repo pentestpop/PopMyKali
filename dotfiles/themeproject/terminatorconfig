@@ -5,12 +5,12 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#101935"
+    background_color = "#010A21"
     background_darkness = 0.95
     background_type = transparent
-    foreground_color = "#ebe0d6"
+    foreground_color = "#E4D8C9"
     scrollback_lines = 5000
-    palette = "#101935:#ff5fa5:#1b998b:#ffcb77:#266dd3:#fc9cc2:#cde6f5:#ebe0d6:#1c2d5e:#ff99c5:#9bf8d8:#ffde81:#4ba1db:#f5b7de:#eefaff:#f8f5f1"
+    palette = "#010A21:#F9629F:#054A29:#A39161:#001848:#fc9cc2:#01BAEF:#E4D8C9:#02123B:#FB9DC3:#70C2A3:#EDB88B:#0068B8:#FED7E7:#ADE7FF:#F8F5F1"
     use_theme_colors = True
     title_transmit_bg_color = "#dc8add"
   [[Solarized Dark - Patched]]

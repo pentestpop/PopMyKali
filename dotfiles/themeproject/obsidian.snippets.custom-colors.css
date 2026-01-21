@@ -11,13 +11,14 @@
   --text-muted: #FC9CC2;        /* Pink Mist */
   --text-faint: #4197D8;        /* Blue Bell */
   --text-on-accent: #001848;    /* Navy */
+  --text-highlight-bg: #41E2BA;      /* Turquoise */
   
   --bold-color: #F9629F;        /* Rose Kiss */
   --italic-color: #FC9CC2;      /* Pink Mist */
   
   /* HEADERS */
-  --h1-color: #41E2BA; --h2-color: #41E2BA; --h3-color: #41E2BA;
-  --h4-color: #41E2BA; --h5-color: #41E2BA; --h6-color: #41E2BA;
+  --h1-color: #41E2BA; --h2-color: #41E2BA; --h3-color: #41E2BA; /* Turquoise */
+  --h4-color: #41E2BA; --h5-color: #41E2BA; --h6-color: #41E2BA; /* Turquoise */
 
   /* UI ACCENTS */
   --interactive-accent: #4197D8;
@@ -26,6 +27,11 @@
   /* CODE */
   --code-background: #02123B;
   --code-normal: #F8F5F1;
+}
+
+/* Updates the text color inside the mark tag, restricted to dark theme */
+.theme-dark .cm-highlight {
+  color: #010A21 !important;
 }
 
 /* --- LIGHT THEME SETTINGS --- */

@@ -1,21 +1,30 @@
 {
-    "redhat.telemetry.enabled": false
-
+    "redhat.telemetry.enabled": false,
     "workbench.colorCustomizations": {
         "editor.background": "#010A21",
-        "editor.foreground": "#E4D8C9",
-        "editorCursor.foreground": "#4197D8",
-        "editor.selectionBackground": "#E4D8C9", 
-        "activityBar.background": "#02123B",
-        "sideBar.background": "#02123B",
-        "terminal.background": "#101935",
-        "terminal.ansiBlack": "#001848",
-        "terminal.ansiRed": "#F9629F",
-        "terminal.ansiGreen": "#054A29",
-        "terminal.ansiYellow": "#A39161",
-        "terminal.ansiBlue": "#4197D8",
-        "terminal.ansiMagenta": "#fc9cc2",
-        "terminal.ansiCyan": "#41E2BA",
-        "terminal.ansiWhite": "#E4D8C9"
+        "editor.foreground": "#F6EFEE",
+        "editorCursor.foreground": "#F9629F",
+        "editor.selectionBackground": "#1A3A5F88", 
+        "activityBar.background": "#010A21",
+        "sideBar.background": "#010A21",
+        "terminal.background": "#010A21",
+        /* Normal ANSI */
+        "terminal.ansiBlack": "#010a21",
+        "terminal.ansiRed": "#d24d7d",
+        "terminal.ansiGreen": "#2d8a75",
+        "terminal.ansiYellow": "#d9a441",
+        "terminal.ansiBlue": "#5167c4",
+        "terminal.ansiMagenta": "#c76b98",
+        "terminal.ansiCyan": "#008da3",
+        "terminal.ansiWhite": "#ddcbbd",
+        /* Bright ANSI */
+        "terminal.ansiBrightBlack": "#101935",
+        "terminal.ansiBrightRed": "#f9629f",
+        "terminal.ansiBrightGreen": "#70c2a3",
+        "terminal.ansiBrightYellow": "#efd6ac",
+        "terminal.ansiBrightBlue": "#ade7ff",
+        "terminal.ansiBrightMagenta": "#fc9cc2",
+        "terminal.ansiBrightCyan": "#00b7d4",
+        "terminal.ansiBrightWhite": "#f6efee"
     }
 }

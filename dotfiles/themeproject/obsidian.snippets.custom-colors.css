@@ -1,0 +1,57 @@
+/* --- DARK THEME SETTINGS --- */
+.theme-dark {
+  --background-primary: #010A21;      
+  --background-primary-alt: #101935;  
+  --background-secondary: #0E162F;    
+  
+  --text-normal: #F6EFEE;      /* Snow */
+  --text-muted: #B0A695;       /* Muted Bone */
+  --text-faint: #4B6A88;       
+  --text-on-accent: #010A21;   
+  --text-highlight-bg: #d9a44155; 
+  
+  --bold-color: #F9629F;        /* Rose Kiss */
+  --italic-color: #70C2A3;      /* Mint Leaf */
+  
+  /* HEADERS - Descending through the blues/teals */
+  --h1-color: #ADE7FF; /* Frosted Blue */
+  --h2-color: #00B7D4; /* Turquoise Surf */
+  --h3-color: #70C2A3; /* Mint Leaf */
+  --h4-color: #FC9CC2; /* Pink Mist */
+  --h5-color: #EFD6AC; /* Wheat */
+  --h6-color: #DDCBBD; /* Bone */
+
+  --interactive-accent: #00B7D4;
+  --interactive-accent-hover: #ADE7FF;
+  
+  --code-background: #101935;
+  --code-normal: #ADE7FF;
+}
+
+/* --- LIGHT THEME SETTINGS --- */
+.theme-light {
+  --background-primary: #F6EFEE;      
+  --background-primary-alt: #E4D8C9;  
+  --background-secondary: #DDCBBD;    
+  
+  --text-normal: #010A21;      
+  --text-muted: #3879AB;       
+  --text-faint: #5167C4;       
+  
+  --bold-color: #D24D7D;        /* Darker Rose */
+  --italic-color: #2D8A75;      /* Darker Teal */
+  
+  --h1-color: #3879AB; 
+  --h2-color: #008DA3; 
+  --h3-color: #2D8A75; 
+
+  --interactive-accent: #5167C4;
+  --interactive-accent-hover: #3879AB;
+  
+  --code-background: #E4D8C9;
+  --code-normal: #010A21;
+}
+
+.cm-cursor {
+  border-left-color: #F9629F !important; 
+}

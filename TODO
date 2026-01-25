@@ -31,3 +31,6 @@ alias bh-ps='cd /opt/bloodhoundce && sudo docker-compose ps'
 6. signal - https://signal.org/download/linux/
 7. httpx (https://github.com/projectdiscovery/httpx)`go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest`
 8. apt install fzf and add "source <(fzf --zsh)" to .zshrc file
+
+
+1/24/26 - Fix discrepancies between .zshrc file and popmykali script and kali installs

@@ -151,8 +151,8 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     cp /opt/PopMyKali/dotfiles/terminatorconfig ~/.config/terminator/config;
     echo " Solarized Dark - Patched is a decent template for terminator";
     
-    # To add a white text on blue background for your terminal, add this to .zshrc:
-    echo "PS1='%{\$(tput setab 4)\$(tput setaf 7)%}%(#.\$USER.\$USER)@%m%{\$(tput sgr0)%}-%{\$(tput setaf 4)%}-%{\$(tput sgr0)%}[%~]%{\$(tput sgr0)%}\$ '" >> ~/.zshrc;
+    # Install oh-my-zsh:
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     
     # ASCII art
     octopascii="

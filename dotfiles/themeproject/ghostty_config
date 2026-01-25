@@ -1,0 +1,64 @@
+# Ghostty Configuration: Popped Theme
+# ---------------------------------------------------------
+
+# Colors
+background = 010a21
+foreground = f6efee
+
+# Transparency (background-opacity)
+# Note: Ghostty uses 0.0 to 1.0; 0.95 matches your "darkness" setting
+background-opacity = 0.95
+background-blur = true
+
+# Palette (Normal: 0-7, Bright: 8-15)
+palette = 0=#010a21
+palette = 1=#d24d7d
+palette = 2=#2d8a75
+palette = 3=#d9a441
+palette = 4=#5167c4
+palette = 5=#c76b98
+palette = 6=#008da3
+palette = 7=#ddcbbd
+palette = 8=#101935
+palette = 9=#f9629f
+palette = 10=#70c2a3
+palette = 11=#efd6ac
+palette = 12=#ade7ff
+palette = 13=#fc9cc2
+palette = 14=#00b7d4
+palette = 15=#f6efee
+
+# Scrollback
+scrollback-limit = 5000
+
+# Appearance Enhancements
+# ---------------------------------------------------------
+# Hides the native titlebar for a much cleaner "Popped" look
+# or use 'tabs' to integrate tabs directly into the titlebar area
+macos-titlebar-style = hidden
+
+# Window Padding (Adds some breathing room around your text)
+window-padding-x = 10
+window-padding-y = 10
+
+# Cursor Customization
+# bar, block, underline, block_hollow - beam looks great with dark themes
+cursor-style = block
+cursor-style-blink = true
+
+# Font Rendering (Makes text pop on Retina/High-DPI displays)
+font-thicken = true
+adjust-cell-height = 15%
+
+background-blur = true
+copy-on-select = false
+confirm-close-surface = false
+
+# Ensure box-drawing characters align perfectly
+font-family = "JetBrains Mono" # Or your preferred Nerd Font
+adjust-cell-height = 10%
+adjust-cursor-thickness = 2
+
+# Helps the multi-line prompt feel cohesive
+window-padding-x = 12
+window-padding-y = 8

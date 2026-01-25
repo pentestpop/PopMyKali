@@ -1,59 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <style-scheme id="popped" name="Popped" version="1.0">
-  <author>Pop</author>
-  <description>A classic Pop theme</description>
+  <author>Gemini</author>
+  <description>Living that Pop life</description>
 
-  <!-- Base editor colors -->
-  <style name="text" foreground="#E4D8C9" background="#010A21"/>
-  <style name="selection" background="#F8F5F1" foreground="#001848"/>
-  <style name="cursor" foreground="#4197D8"/>
-  <style name="current-line" background="#02123B"/>
-  <style name="line-numbers" foreground="#FC9CC2" background="#010A21"/>
-  <style name="current-line-number" foreground="#E4D8C9" background="#001848" bold="true"/>
+  <style name="text" foreground="#F6EFEE" background="#010A21"/>
+  <style name="selection" background="#1A3A5F" foreground="#ADE7FF"/>
+  <style name="cursor" foreground="#F9629F"/>
+  <style name="current-line" background="#101935"/>
+  <style name="line-numbers" foreground="#4B6A88" background="#010A21"/>
+  <style name="current-line-number" foreground="#F6EFEE" background="#101935" bold="true"/>
   
-  <!-- Bracket matching -->
-  <style name="bracket-match" background="#4197D8" foreground="#F8F5F1"/>
-  <style name="bracket-mismatch" background="#F9629F" foreground="#F8F5F1"/>
+  <style name="bracket-match" background="#5167C4" foreground="#F6EFEE"/>
+  <style name="bracket-mismatch" background="#D24D7D" foreground="#F6EFEE"/>
 
-  <!-- Search -->
-  <style name="search-match" background="#054A29" foreground="#E4D8C9"/>
+  <style name="search-match" background="#D9A441" foreground="#010A21"/>
 
-  <!-- Comments -->
-  <style name="def:comment" foreground="#A39161" italic="true"/>
-  <style name="def:shebang" foreground="#A39161" italic="true"/>
-  <style name="def:doc-comment-element" foreground="#A39161" italic="true"/>
+  <style name="def:comment" foreground="#4B6A88" italic="true"/>
+  <style name="def:shebang" foreground="#4B6A88" italic="true"/>
+  <style name="def:doc-comment-element" foreground="#4B6A88" italic="true"/>
 
-  <!-- Strings -->
   <style name="def:string" foreground="#70C2A3"/>
-  <style name="def:special-char" foreground="#FC9CC2"/>
+  <style name="def:special-char" foreground="#00B7D4"/>
   
-  <!-- Keywords and types -->
-  <style name="def:keyword" foreground="#fc9cc2" bold="true"/>
-  <style name="def:statement" foreground="#fc9cc2"/>
-  <style name="def:type" foreground="#F8F5F1"/>
-  <style name="def:builtin" foreground="#0068B8"/>
+  <style name="def:keyword" foreground="#FC9CC2" bold="true"/>
+  <style name="def:statement" foreground="#FC9CC2"/>
+  <style name="def:type" foreground="#00B7D4"/>
+  <style name="def:builtin" foreground="#ADE7FF"/>
   
-  <!-- Numbers and constants -->
-  <style name="def:number" foreground="#EDB88B"/>
-  <style name="def:decimal" foreground="#EDB88B"/>
-  <style name="def:base-n-integer" foreground="#EDB88B"/>
-  <style name="def:floating-point" foreground="#EDB88B"/>
-  <style name="def:complex" foreground="#EDB88B"/>
-  <style name="def:boolean" foreground="#EDB88B"/>
-  <style name="def:constant" foreground="#EDB88B"/>
+  <style name="def:number" foreground="#EFD6AC"/>
+  <style name="def:decimal" foreground="#EFD6AC"/>
+  <style name="def:base-n-integer" foreground="#EFD6AC"/>
+  <style name="def:floating-point" foreground="#EFD6AC"/>
+  <style name="def:complex" foreground="#EFD6AC"/>
+  <style name="def:boolean" foreground="#EFD6AC"/>
+  <style name="def:constant" foreground="#FC9CC2"/>
   
-  <!-- Functions and identifiers -->
-  <style name="def:function" foreground="#41E2BA"/>
-  <style name="def:identifier" foreground="#E4D8C9"/>
+  <style name="def:function" foreground="#EFD6AC"/>
+  <style name="def:identifier" foreground="#ADE7FF"/>
   
-  <!-- Operators and special -->
-  <style name="def:operator" foreground="#fc9cc2"/>
+  <style name="def:operator" foreground="#DDCBBD"/>
   <style name="def:special-constant" foreground="#F9629F"/>
-  <style name="def:preprocessor" foreground="#F9629F"/>
+  <style name="def:preprocessor" foreground="#D24D7D"/>
   
-  <!-- Errors and warnings -->
-  <style name="def:error" foreground="#F9629F" underline="true"/>
-  <style name="def:warning" foreground="#A39161" underline="true"/>
-  <style name="def:note" foreground="#FED7E7"/>
+  <style name="def:error" foreground="#F9629F" underline="true" bold="true"/>
+  <style name="def:warning" foreground="#D9A441" underline="true"/>
+  <style name="def:note" foreground="#70C2A3"/>
 
 </style-scheme>

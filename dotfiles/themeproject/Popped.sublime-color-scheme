@@ -1,0 +1,22 @@
+{
+    "name": "Popped",
+    "globals": {
+        "background": "#010A21",
+        "foreground": "#F6EFEE",
+        "caret": "#F9629F",
+        "line_highlight": "#101935",
+        "selection": "#1A3A5F88",
+        "gutter_foreground": "#4B6A88"
+    },
+    "rules": [
+        { "name": "Comment", "scope": "comment", "foreground": "#4B6A88", "font_style": "italic" },
+        { "name": "String", "scope": "string", "foreground": "#70C2A3" },
+        { "name": "Number", "scope": "constant.numeric", "foreground": "#FC9CC2" },
+        { "name": "Keyword", "scope": "keyword", "foreground": "#FC9CC2" },
+        { "name": "Function", "scope": "entity.name.function", "foreground": "#EFD6AC" },
+        { "name": "Variable", "scope": "variable", "foreground": "#ADE7FF" },
+        { "name": "Type", "scope": "entity.name.type", "foreground": "#00B7D4" },
+        { "name": "Operator", "scope": "keyword.operator", "foreground": "#DDCBBD" },
+        { "name": "Invalid", "scope": "invalid", "foreground": "#F9629F", "background": "#d24d7d33" }
+    ]
+}

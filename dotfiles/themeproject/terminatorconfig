@@ -3,7 +3,7 @@
   enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
   ask_before_closing = never
 [keybindings]
-[[profiles]
+[[profiles]]
   [[default]]
     background_color = "#010A21"
     background_darkness = 0.95

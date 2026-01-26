@@ -5,27 +5,27 @@
   --background-secondary: #0E162F;    
   
   --text-normal: #F6EFEE;      /* Snow */
-  --text-muted: #B0A695;       /* Muted Bone */
-  --text-faint: #4B6A88;       
-  --text-on-accent: #010A21;   
-  --text-highlight-bg: #d9a44155; 
+  --text-muted: #B0A695;       /* Muted Bone - not sure when used - Not in Palette*/
+  --text-faint: #4B6A88;       /* Blue Slate - Not in Palette*/
+  --text-on-accent: #010A21;   /* Ink Black */
+  --text-highlight-bg: #F9629F; /* Rose Kiss */
   
-  --bold-color: #F9629F;        /* Rose Kiss */
+  --bold-color: #D9A441;        /* Honey Bronze */
   --italic-color: #70C2A3;      /* Mint Leaf */
   
-  /* HEADERS - Descending through the blues/teals */
+  /* HEADERS - Descending through the blues/teals - These are all Brights */
   --h1-color: #ADE7FF; /* Frosted Blue */
   --h2-color: #00B7D4; /* Turquoise Surf */
   --h3-color: #70C2A3; /* Mint Leaf */
   --h4-color: #FC9CC2; /* Pink Mist */
   --h5-color: #EFD6AC; /* Wheat */
-  --h6-color: #DDCBBD; /* Bone */
+  --h6-color: #DDCBBD; /* Powder Petal */
 
-  --interactive-accent: #00B7D4;
-  --interactive-accent-hover: #ADE7FF;
+  --interactive-accent: #00B7D4;	/* Turquoise Surf */
+  --interactive-accent-hover: #ADE7FF;	/* Frosted Blue */
   
-  --code-background: #101935;
-  --code-normal: #ADE7FF;
+  --code-background: #101935; /* Prussian Blue */
+  --code-normal: #ADE7FF; /* Frosted Blue */
 }
 
 /* --- LIGHT THEME SETTINGS --- */

@@ -38,12 +38,15 @@
   --text-muted: #3879AB;       
   --text-faint: #5167C4;       
   
-  --bold-color: #D24D7D;        /* Darker Rose */
-  --italic-color: #2D8A75;      /* Darker Teal */
+  --bold-color: #D24D7D;        /* Rose Punch */
+  --italic-color: #2D8A75;      /* Jungle Teal */
   
-  --h1-color: #3879AB; 
-  --h2-color: #008DA3; 
-  --h3-color: #2D8A75; 
+  --h1-color: #008DA3; /* Pacific Cyan */
+  --h2-color: #2D8A75; /* Jungle Teal */
+  --h3-color: #C76B98; /* Sweet Peony */
+  --h4-color: #5167C4; /* Slate Indigo */
+  --h5-color: #D9A441; /* Honey Bronze */
+  --h6-color: #D24D7D; /* Rose Punch - Doesn't match with above which uses white */ 
 
   --interactive-accent: #5167C4;
   --interactive-accent-hover: #3879AB;

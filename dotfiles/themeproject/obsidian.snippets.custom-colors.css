@@ -14,10 +14,10 @@
   --italic-color: #70C2A3;      /* Mint Leaf */
   
   /* HEADERS - Descending through the blues/teals - These are all Brights */
-  --h1-color: #ADE7FF; /* Frosted Blue */
-  --h2-color: #00B7D4; /* Turquoise Surf */
-  --h3-color: #70C2A3; /* Mint Leaf */
-  --h4-color: #FC9CC2; /* Pink Mist */
+  --h1-color: #00B7D4; /* Turquoise Surf */
+  --h2-color: #70C2A3; /* Mint Leaf */
+  --h3-color: #FC9CC2; /* Pink Mist */
+  --h4-color: #ADE7FF; /* Frosted Blue */
   --h5-color: #EFD6AC; /* Wheat */
   --h6-color: #DDCBBD; /* Powder Petal */
 

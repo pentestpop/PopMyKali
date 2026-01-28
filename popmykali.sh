@@ -167,9 +167,9 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     # cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
     
     # copy orville.jpg to ~/Pictures/. so you have a test photo
-    cp /opt/PopMyKali/samples/Sample.jpg ~/Pictures/Sample.jpg;
-    cp /opt/PopMyKali/samples/Sample.png ~/Pictures/Sample.png;
-    cp /opt/PopMyKali/samples/orville.jpg ~/Pictures/orville.jpg
+    cp /opt/PopMyKali/samples/Sample.jpg $HOME/Pictures/Sample.jpg;
+    cp /opt/PopMyKali/samples/Sample.png $HOME/Pictures/Sample.png;
+    cp /opt/PopMyKali/samples/orville.jpg $HOME/Pictures/orville.jpg
     
     # create a folder with useful scripts to run a server from
     bash /opt/PopMyKali/servefolder.sh;
@@ -182,8 +182,7 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     pip install requests;
     mkdir -p $HOME/.config/terminator/plugins;
     wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py";
-    cp /opt/PopMyKali/dotfiles/terminatorconfig ~/.config/terminator/config;
-    echo " Solarized Dark - Patched is a decent template for terminator";
+    cp /opt/PopMyKali/dotfiles/themeproject/terminatorconfig ~/.config/terminator/config;
     
     # Install oh-my-zsh:
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

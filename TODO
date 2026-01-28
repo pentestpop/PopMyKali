@@ -1,15 +1,3 @@
-3. https://forum.sublimetext.com/t/disable-automatic-loading-of-last-session/4132/13
-        - This is is to stop Sublime from opening the most recent folder every time. 
-        - Add settings to .config/sublime-text/Packages/User/Preferences.sublime-settings
-4. Fix background image and xfce settings which are out of date
-5. fix server folder from going to /root/server rather than /home/$user/server if running servefolder.sh with sudo 
-
-2. Move Burp, Terminator, Sublime, VS-Code to panel
-6. signal - https://signal.org/download/linux/
-7. httpx (https://github.com/projectdiscovery/httpx)`go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest`
-8. apt install fzf and add "source <(fzf --zsh)" to .zshrc file
-
-
 1/24/26 - Fix discrepancies between .zshrc file and popmykali script and kali installs
 
 # Install vs-code
@@ -29,3 +17,36 @@ uv tool install git+https://github.com/blacklanternsecurity.com/impacket;
 sudo apt install pipx git
 pipx ensurepath
 pipx install git+https://github.com/blacklanternsecurity/NetExec
+
+# apt
+apt install fzf
+
+#httpx (https://github.com/projectdiscovery/httpx)
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+
+#Sudo or user issue: 
+echo "Don't forget to run /opt/PopMyKali/servefolder.sh"
+#and also change ~ to /home/$SUDO_USER/
+
+#Install Signal
+# 1. Install our official public software signing key:
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg;
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+
+# 2. Add our repository to your list of repositories:
+wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/signal-desktop.sources;
+cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
+
+# 3. Update your package database and install Signal:
+sudo apt update && sudo apt install signal-desktop
+
+Maybe one day: 
+1. (Debian - XFCE) Fix background image and xfce settings which are out of date
+2. Move Burp, Terminator, Sublime, VS-Code to panel
+3. Add to .config/sublime-text/Packages/User/Preferences.sublime-settings
+
+        {
+          "hot_exit": false,
+          "remember_open_files": false
+        }
+4. 

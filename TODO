@@ -1,4 +1,6 @@
-1/24/26 - Fix discrepancies between .zshrc file and popmykali script and kali installs
+1/24/26 - 
+1. Fix discrepancies between .zshrc file and popmykali script and kali installs
+2. Differentiate between Arch and Debian (or just make another Arch Script?)
 
 # Install vs-code
 sudo apt update;

@@ -11,7 +11,9 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [bat](https://github.com/sharkdp/bat) - improvment on `cat`
 - [bloodhound.py](https://www.kali.org/tools/bloodhound.py/) - for collecting `.json` files for bloodhound to ingest remotely
 - [burpsuite](https://www.kali.org/tools/burpsuite/) - for performing security testing of web applications , through editing HTTP requests for example
+- docker.io, docker-compose
 - [enum4linux](https://www.kali.org/tools/enum4linux/) - a tool for enumerating information from Windows and Samba systems remotely
+- fzf
 - [gccgo-go](https://go.dev/doc/install/gccgo) - a compiler for Go 
 - [gobuster](https://www.kali.org/tools/gobuster/) - brute-force directories and files in websites, Virtual Host names, and subdomains 
 - [golang-go](https://go.dev/) - the Go programming language 
@@ -33,15 +35,15 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [sublime-text](https://www.sublimetext.com/)- text editor 
 - [terminator](https://gnome-terminator.org/) - a simple to use terminal emulator 
 - [wpscan](https://www.kali.org/tools/wpscan/) - scan a target WordPress URL and enumerate any plugins that are installed
-- [wsgidav](https://www.kali.org/tools/wsgidav/)- a generic and extendable WebDAV server
 
 #### Lately removed
 These have been removed due to changes with bloodhound. 
-- [bloodhound](https://www.kali.org/tools/bloodhound/) - for visualizing Active Directory information
+- [bloodhound](https://www.kali.org/tools/bloodhound/) - (changed to docker version) for visualizing Active Directory information 
 - [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound
 - pspy - I have been recieving errors even after updating the apt respository
 - wsgidav - I have been using other tools
 - gcc-go - seemed to have conflicts with golang-go
+- [wsgidav](https://www.kali.org/tools/wsgidav/)- a generic and extendable WebDAV server
 
 
 ### GitHub
@@ -55,7 +57,12 @@ These have been removed due to changes with bloodhound.
 - [Ivan Sincek Reverse Shell](https://github.com/ivan-sincek/php-reverse-shell) - My favorite PHP reverse shell, it should be on your machine.
 - [git-dumper](https://github.com/arthaud/git-dumper) - Dumps git repos from the web, especially useful for those which aren't easily cloned with `git`.
 - [verybasicenum](https://github.com/pentestpop/verybasicenum) - My personal custom enumeration scripts. Simpler and faster than winpeas/linpeas though much less detail. I like to run them first, then the more detailed scripts after.
-- [Kerbrute](https://github.com/ropnop/kerbrute)- for brute forcing Kerberos.  
+- [Kerbrute](https://github.com/ropnop/kerbrute)- for brute forcing Kerberos.
+
+### Other Tools
+- Signal
+- VS Code
+- Specific version of Impacket and NXC
 
 ## Advanced Usage (Poptimize)
 After these tools have been installed, the script will then prompt you for whether you want to poptimize your install. This script contains some additional customizations that I personally find useful but are more specific to me:

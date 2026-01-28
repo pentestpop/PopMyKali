@@ -28,17 +28,25 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Don't forget to run /opt/PopMyKali/servefolder.sh"
 #and also change ~ to /home/$SUDO_USER/
 
-#Install Signal
+#Install Signal on Debian
 # 1. Install our official public software signing key:
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg;
 cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-
 # 2. Add our repository to your list of repositories:
 wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/signal-desktop.sources;
 cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
-
 # 3. Update your package database and install Signal:
 sudo apt update && sudo apt install signal-desktop
+
+#Install Signal on Arch
+# 1. Install base-devel (if you haven't already)
+sudo pacman -S --needed base-devel git
+# 2. Clone the Signal package build
+git clone https://aur.archlinux.org/signal-desktop.git
+# 3. Enter the directory
+cd signal-desktop
+# 4. Build and install (this handles dependencies automatically)
+makepkg -si
 
 Maybe one day: 
 1. (Debian - XFCE) Fix background image and xfce settings which are out of date

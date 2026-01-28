@@ -4,14 +4,28 @@
 4. Fix background image and xfce settings which are out of date
 5. fix server folder from going to /root/server rather than /home/$user/server if running servefolder.sh with sudo 
 
-1. Download and install vs-code
 2. Move Burp, Terminator, Sublime, VS-Code to panel
-3. `curl -LsSf https://astral.sh/uv/install.sh | sh`
-4. `uv tool install git+https://github.com/blacklanternsecurity.com/impacket`
-5. BLS version of nxc as well
 6. signal - https://signal.org/download/linux/
 7. httpx (https://github.com/projectdiscovery/httpx)`go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest`
 8. apt install fzf and add "source <(fzf --zsh)" to .zshrc file
 
 
 1/24/26 - Fix discrepancies between .zshrc file and popmykali script and kali installs
+
+# Install vs-code
+sudo apt update;
+sudo apt install software-properties-common apt-transport-https curl gnupg2;
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -;
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
+sudo apt update;
+sudo apt install code;
+
+# Install BLS-specific tools
+# Impacket
+curl -LsSf https://astral.sh/uv/install.sh | sh;
+uv tool install git+https://github.com/blacklanternsecurity.com/impacket; 
+
+# NetExec
+sudo apt install pipx git
+pipx ensurepath
+pipx install git+https://github.com/blacklanternsecurity/NetExec

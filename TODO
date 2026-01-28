@@ -1,44 +1,62 @@
-1/24/26 - 
+Maybe one day: 
+1. (Debian - XFCE) Fix background image and xfce settings which are out of date
+2. Move Burp, Terminator, Sublime, VS-Code to panel
+3. Add to .config/sublime-text/Packages/User/Preferences.sublime-settings
+
+        {
+          "hot_exit": false,
+          "remember_open_files": false
+        }
+4.  Differentiate between Arch and Debian (or just make another Arch Script?)
+
+
+1/24/26 - all below completed 
 1. Fix discrepancies between .zshrc file and popmykali script and kali installs
-2. Differentiate between Arch and Debian (or just make another Arch Script?)
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/lib/go/bin:$GOPATH/bin
+# Alias to start BloodHound
+alias bh-start='cd /opt/bloodhoundce && docker-compose up -d'
+# Alias to stop BloodHound
+alias bh-stop='cd /opt/bloodhoundce && docker-compose stop'
+# Alias to see the running containers
+alias bh-ps='cd /opt/bloodhoundce && docker-compose ps'
 
 # Install vs-code
-sudo apt update;
-sudo apt install software-properties-common apt-transport-https curl gnupg2;
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -;
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
-sudo apt update;
-sudo apt install code;
+# sudo apt update;
+# sudo apt install software-properties-common apt-transport-https curl gnupg2;
+# curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -;
+# sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
+# sudo apt update;
+# sudo apt install code;
 
-# Install BLS-specific tools
-# Impacket
-curl -LsSf https://astral.sh/uv/install.sh | sh;
-uv tool install git+https://github.com/blacklanternsecurity.com/impacket; 
-
-# NetExec
-sudo apt install pipx git
-pipx ensurepath
-pipx install git+https://github.com/blacklanternsecurity/NetExec
+## Install BLS-specific tools
+## Impacket
+# curl -LsSf https://astral.sh/uv/install.sh | sh;
+# uv tool install git+https://github.com/blacklanternsecurity.com/impacket; 
+## NetExec
+# apt install pipx git
+# pipx ensurepath
+# pipx install git+https://github.com/blacklanternsecurity/NetExec
 
 # apt
-apt install fzf
+# apt install fzf
 
-#httpx (https://github.com/projectdiscovery/httpx)
-go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+##httpx (https://github.com/projectdiscovery/httpx)
+#go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 
-#Sudo or user issue: 
-echo "Don't forget to run /opt/PopMyKali/servefolder.sh"
-#and also change ~ to /home/$SUDO_USER/
+##Sudo or user issue: 
+#echo "Don't forget to run /opt/PopMyKali/servefolder.sh"
+##and also change ~ to /home/$SUDO_USER/
 
-#Install Signal on Debian
-# 1. Install our official public software signing key:
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg;
-cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-# 2. Add our repository to your list of repositories:
-wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/signal-desktop.sources;
-cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
-# 3. Update your package database and install Signal:
-sudo apt update && sudo apt install signal-desktop
+##Install Signal on Debian
+## 1. Install our official public software signing key:
+#wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg;
+#cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+## 2. Add our repository to your list of repositories:
+#wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/signal-desktop.sources;
+#cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
+## 3. Update your package database and install Signal:
+#sudo apt update && sudo apt install signal-desktop
 
 #Install Signal on Arch
 # 1. Install base-devel (if you haven't already)
@@ -49,14 +67,3 @@ git clone https://aur.archlinux.org/signal-desktop.git
 cd signal-desktop
 # 4. Build and install (this handles dependencies automatically)
 makepkg -si
-
-Maybe one day: 
-1. (Debian - XFCE) Fix background image and xfce settings which are out of date
-2. Move Burp, Terminator, Sublime, VS-Code to panel
-3. Add to .config/sublime-text/Packages/User/Preferences.sublime-settings
-
-        {
-          "hot_exit": false,
-          "remember_open_files": false
-        }
-4. 

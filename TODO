@@ -11,10 +11,12 @@ gsettings set org.gnome.shell.extensions.pop-shell focus-up "['<Super>Up']"
 gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>Down']"
 
 # 2. Map the "Move Window" shortcuts (for shifting tiles)
-gsettings set org.gnome.shell.extensions.pop-shell move-left "['<Shift><Super>Left']"
-gsettings set org.gnome.shell.extensions.pop-shell move-right "['<Shift><Super>Right']"
-gsettings set org.gnome.shell.extensions.pop-shell move-up "['<Shift><Super>Up']"
-gsettings set org.gnome.shell.extensions.pop-shell move-down "['<Shift><Super>Down']"
+gsettings set org.gnome.shell.extensions.pop-shell tile-move-left "['<Shift><Super>Left']"
+gsettings set org.gnome.shell.extensions.pop-shell tile-move-right "['<Shift><Super>Right']"
+gsettings set org.gnome.shell.extensions.pop-shell tile-move-up "['<Shift><Super>Up']"
+gsettings set org.gnome.shell.extensions.pop-shell tile-move-down "['<Shift><Super>Down']"
+
+
 
 # 3. Ensure the Tiling is actually active
 gsettings set org.gnome.shell.extensions.pop-shell tile-by-default true

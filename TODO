@@ -1,4 +1,4 @@
-2/26/26
+2/6/26
 1. Add zsh plugins
         1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -6,11 +6,10 @@
 3. install vs-code file by downloading and running `sudo apt install ./<file.deb>
 4. For Debian - curl docker.io docker-compose fzf git golang-go locate nmap python3-pip python3-venv terminator smbmap sqlmap sublime-text wget
 5. pipx install bbot
-6. pipx install 
-7. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity.com/impacket.git` then `cd impacket` then `uv tool install .`
-8. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
-9. `mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'`
-10. `mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'`
+6. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity.com/impacket.git` then `cd impacket` then `uv tool install .`
+7. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
+8. `mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'`
+9. `mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'`
 
 
 Maybe one day: 

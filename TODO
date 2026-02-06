@@ -2,24 +2,11 @@
 1. Add zsh plugins
         1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-
-# 1. Ensure the Management Mode shortcuts are mapped to Arrows
-gsettings set org.gnome.shell.extensions.pop-shell focus-left "['<Super>Left']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-right "['<Super>Right']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-up "['<Super>Up']"
-gsettings set org.gnome.shell.extensions.pop-shell focus-down "['<Super>Down']"
-
-# 2. Map the "Move Window" shortcuts (for shifting tiles)
-gsettings set org.gnome.shell.extensions.pop-shell tile-move-left "['<Shift><Super>Left']"
-gsettings set org.gnome.shell.extensions.pop-shell tile-move-right "['<Shift><Super>Right']"
-gsettings set org.gnome.shell.extensions.pop-shell tile-move-up "['<Shift><Super>Up']"
-gsettings set org.gnome.shell.extensions.pop-shell tile-move-down "['<Shift><Super>Down']"
+2. actually add `apt install sublime-text`
 
 
 
-# 3. Ensure the Tiling is actually active
-gsettings set org.gnome.shell.extensions.pop-shell tile-by-default true
+
 
 Maybe one day: 
 1. (Debian - XFCE) Fix background image and xfce settings which are out of date

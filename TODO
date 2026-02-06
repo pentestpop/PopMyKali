@@ -8,7 +8,7 @@
 5. pipx install bbot
 6. pipx install 
 7. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity.com/impacket.git` then `cd impacket` then `uv tool install .`
-
+8. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
 
 
 

@@ -1,3 +1,8 @@
+2/26/26
+1. Add zsh plugins
+        1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 Maybe one day: 
 1. (Debian - XFCE) Fix background image and xfce settings which are out of date
 2. Move Burp, Terminator, Sublime, VS-Code to panel

@@ -18,6 +18,8 @@
 13. pipx install name-that-hash
 14. zsh needs to be installed before oh-my-zsh
 15. apt install plocate (needed for updatedb)
+16. probably just remove autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass wpscan
+17. `pipx install name-that-hash`
 
 
 Maybe one day: 

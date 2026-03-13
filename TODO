@@ -3,7 +3,8 @@
         1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 2. actually add `apt install sublime-text` - has to be after adding the key
-3. install vs-code file by downloading and running `sudo apt install ./<file.deb>
+3. install vs-code file by downloading and running `sudo apt install ./<file.deb>`
+3.5 - I n longer think this is correct, I think it's just after adding the key which didn't work bc wget
 4. For Debian - curl docker.io docker-compose fzf git golang-go locate nmap python3-pip python3-venv terminator smbmap sqlmap sublime-text wget
 5. pipx install bbot
 6. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity.com/impacket.git` then `cd impacket` then `uv tool install .`

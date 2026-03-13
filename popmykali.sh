@@ -111,7 +111,7 @@ apt install code;
 ## Install BLS-specific tools
 # Impacket
 curl -LsSf https://astral.sh/uv/install.sh | sh;
-uv tool install git+https://github.com/blacklanternsecurity.com/impacket; 
+uv tool install git+https://github.com/blacklanternsecurity/impacket; 
 # NetExec
 apt install pipx git;
 pipx ensurepath;

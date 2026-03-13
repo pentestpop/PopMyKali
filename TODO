@@ -21,6 +21,8 @@
 15. apt install plocate (needed for updatedb)
 16. probably just remove autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass wpscan
 17. `pipx install name-that-hash`
+18. sudo apt install python-is-python3 pip
+19. then netexec
 
 
 Maybe one day: 

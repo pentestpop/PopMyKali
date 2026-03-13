@@ -12,6 +12,7 @@
 8. `mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'`
 9. `mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'`
 10. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
+10.5 and disabled "Paste the current selection when middle-click is pressed"
 11. `git clone github.com/zephrfish/bloodhound-customqueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
 12. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
 13. pipx install name-that-hash

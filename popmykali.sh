@@ -182,9 +182,20 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     # Icons and Themes
     mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'
     mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'
-    
-    # ASCII art
-    octopascii="
+
+else
+    echo "Skipping poptimization."
+fi
+
+printf '\n============================================================\n'
+printf '[+] Unzipping RockYou\n'
+printf '============================================================\n\n'
+gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
+
+updatedb
+
+# ASCII art
+octopascii="
                                                                                                            
                                                     %%@@@@@@%                                                
                                                  @@@@@@@@@@@@@@@-                                            
@@ -232,22 +243,11 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
                                                                                                             
     "
     # Split the ASCII art into lines and iterate over them
-    IFS=$'\n'       # Set the Internal Field Separator to newline
-    for line in $octopascii; do
-        echo "$line"
-        sleep 0.2    # Adjust the sleep duration (in seconds) as needed
-    done
-
-else
-    echo "Skipping poptimization."
-fi
-
-printf '\n============================================================\n'
-printf '[+] Unzipping RockYou\n'
-printf '============================================================\n\n'
-gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
-
-updatedb
+IFS=$'\n'       # Set the Internal Field Separator to newline
+for line in $octopascii; do
+   echo "$line"
+   sleep 0.5    # Adjust the sleep duration (in seconds) as needed
+done
 
 cat << EOF
 ## FINAL INSTRUCTIONS ##

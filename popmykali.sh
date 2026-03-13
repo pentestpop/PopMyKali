@@ -167,9 +167,9 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     # cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
     
     # copy orville.jpg to ~/Pictures/. so you have a test photo
-    cp /opt/PopMyKali/samples/Sample.jpg $HOME/Pictures/Sample.jpg;
-    cp /opt/PopMyKali/samples/Sample.png $HOME/Pictures/Sample.png;
-    cp /opt/PopMyKali/samples/orville.jpg $HOME/Pictures/orville.jpg
+    cp /opt/PopMyKali/images/landscape_wallpaper.jpg $HOME/Pictures/landscape_wallpaper.jpg;
+    cp /opt/PopMyKali/images/pop_background_black.svg $HOME/Pictures/pop_background_black.svg;
+    cp /opt/PopMyKali/images/orville.jpg $HOME/Pictures/orville.jpg
     
     # create a folder with useful scripts to run a server from
     bash /opt/PopMyKali/servefolder.sh;

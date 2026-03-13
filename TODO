@@ -4,10 +4,10 @@
 2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
 2.5 ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
 3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
-10. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
-10.5 and disabled "Paste the current selection when middle-click is pressed"
-11. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
-12. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
+4. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
+4.5 and disabled "Paste the current selection when middle-click is pressed"
+5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
+6. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
 
 # Done as of 3/13/26
 - Removed from `apt install`: autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass python3-pip python3-venv wpscan

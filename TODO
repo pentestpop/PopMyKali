@@ -1,28 +1,28 @@
 2/6/26
-1. Add zsh plugins
-        1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-        2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-2. actually add `apt install sublime-text` - has to be after adding the key
-3. install vs-code file by downloading and running `sudo apt install ./<file.deb>`
-3.5 - I n longer think this is correct, I think it's just after adding the key which didn't work bc wget
-4. For Debian - curl docker.io docker-compose fzf git golang-go locate nmap python3-pip python3-venv terminator smbmap sqlmap sublime-text wget
-5. pipx install bbot
-6. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity.com/impacket.git` then `cd impacket` then `uv tool install .`
-6.5 ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
-7. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
-8. `mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'`
-9. `mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'`
+
+1. For Debian - curl docker.io docker-compose fzf git golang-go locate nmap python3-pip python3-venv terminator smbmap sqlmap sublime-text wget
+2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
+2.5 ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
+3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
 10. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
 10.5 and disabled "Paste the current selection when middle-click is pressed"
-11. `git clone github.com/zephrfish/bloodhound-customqueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
+11. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
 12. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
-13. pipx install name-that-hash
-14. zsh needs to be installed before oh-my-zsh
-15. apt install plocate (needed for updatedb)
-16. probably just remove autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass wpscan
-17. `pipx install name-that-hash`
-18. sudo apt install python-is-python3 pip
-19. then netexec
+
+# Done as of 3/13/26
+- Removed from `apt install`: autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass python3-pip python3-venv wpscan
+- added to `apt install`: apt-transport-https curl git gnupg2 pip plocate python-is-python3 software-properties-common wget zsh 
+- code moved
+- `pipx install name-that-hash`
+- `pipx install bbot`
+- moved sublime-text
+- split utilities and pentesting tools
+- added icons and themes:
+        - `mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'`
+        - `mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'`
+- Added zsh plugins
+        1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        2. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
 Maybe one day: 

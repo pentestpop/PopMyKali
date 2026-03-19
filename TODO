@@ -6,7 +6,7 @@
 3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
 4. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
         4.5 and disable "Paste the current selection when middle-click is pressed"
-5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customqueries.json ~/.config/bloodhound/.`
+5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git` `mkdir ~/.config/bloodhound`  `cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.`
 6. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
 7. sudo apt install copyq, flameshot
 8. Shortcuts for copyq and flameshot

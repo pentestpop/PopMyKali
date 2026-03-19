@@ -4,6 +4,7 @@
 2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
         2.5 If it doesn't work next time ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
 3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
+- `sed -i '3 s/$/ contrib/' /etc/apt/sources.list` and `apt install fonts-ibm-plex` at the bottom
 4. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
         4.5 and disable "Paste the current selection when middle-click is pressed"
 5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git` `mkdir ~/.config/bloodhound`  `cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.`

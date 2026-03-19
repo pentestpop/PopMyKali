@@ -8,6 +8,18 @@
         4.5 and disable "Paste the current selection when middle-click is pressed"
 5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git /opt/.` AND `cp -R /opt/bloodhound-customqueries/customerqueries.json ~/.config/bloodhound/.`
 6. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
+7. sudo apt install copyq, flameshot
+8. Shortcuts for copyq and flameshot
+EX:
+```
+gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0', 'custom1']"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name 'Flameshot'
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'flameshot gui'
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Shift><Alt>dollar']"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name 'CopyQ Show'
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'copyq show'
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Shift><Alt>c']"
+```
 
 Maybe one day: 
 1. (Debian - XFCE) Fix background image and xfce settings which are out of date

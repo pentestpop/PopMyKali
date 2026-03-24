@@ -32,7 +32,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install batcat code fzf libreoffice nmap plocate terminator;
+apt install bat code fzf libreoffice nmap plocate terminator;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations

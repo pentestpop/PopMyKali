@@ -133,7 +133,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install batcat code fzf gobuster krb5-user libreoffice nmap onesixtyone plocate remmina rlwrap signal-desktop smbmap sqlmap sublime-text terminator;
+apt install bat code fzf gobuster krb5-user libreoffice nmap onesixtyone plocate remmina rlwrap signal-desktop smbmap sqlmap sublime-text terminator;
 # removed autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass wpscan
 pipx install name-that-hash;
 

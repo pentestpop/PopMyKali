@@ -2,7 +2,6 @@
 A script to install everything I want on a fresh Kali image, inspired by the [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali) script. 
 
 ## Basic Usage (PopMyKali)
-
 Clone this repositiory into your `/opt` directory and run ./popmykali.sh. This script will install a bunch of tools I find myself installing each time I create a new Kali VM. They are listed below. Please note that during this installation, the script will prompt you for your VM's architecture for one or more tools:
 
 ### Kali Package Manager
@@ -12,19 +11,15 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [bloodhound.py](https://www.kali.org/tools/bloodhound.py/) - for collecting `.json` files for bloodhound to ingest remotely
 - [burpsuite](https://www.kali.org/tools/burpsuite/) - for performing security testing of web applications , through editing HTTP requests for example
 - docker.io, docker-compose
-- [enum4linux](https://www.kali.org/tools/enum4linux/) - a tool for enumerating information from Windows and Samba systems remotely
 - fzf
 - [gccgo-go](https://go.dev/doc/install/gccgo) - a compiler for Go 
 - [gobuster](https://www.kali.org/tools/gobuster/) - brute-force directories and files in websites, Virtual Host names, and subdomains 
-- [golang-go](https://go.dev/) - the Go programming language 
-- [hekatomb](https://www.kali.org/tools/hekatomb/)- a Python script that connects to an LDAP directory to retrieve all computers and users’ information in order to decrypt DPAPI blobs 
-- [kerberoast](https://www.kali.org/tools/kerberoast/) - for kerberoasting, though you can probably just use a combination of other tools, impacket in particular 
+- [golang-go](https://go.dev/) - the Go programming language  
 - [krb5-user](https://packages.debian.org/bullseye/krb5-user) - this package contains the basic programs to authenticate to MIT Kerberos
 - [libreoffice](https://www.libreoffice.org/) - FOSS office suite 
 - [netexec](https://www.kali.org/tools/netexec/) - includes nxc, the updated version of crackmapexec
 - [name-that-hash](https://www.kali.org/tools/name-that-hash/)- or nth, a hash identifier through either file or text 
 - [onesixtyone](https://www.kali.org/tools/onesixtyone/) - a simple SNMP scanner, particularly useful for identifying community strings
-- [peass](https://www.kali.org/tools/peass-ng/) - well-known privilege escalation scripts for Windows and Linux (and MacOS)
 - [pspy](https://www.kali.org/tools/pspy/)- a command line tool designed to snoop on processes without need for root permissions. You'll want to run a binary on target machines.  
 - [python3-ldapdomaindump](https://www.kali.org/tools/python-ldapdomaindump/) - Active Directory information dumper via LDAP
 - [python3-pip](https://www.kali.org/tools/python-pip/#python3-pip) - Python3 package installer
@@ -34,15 +29,19 @@ I have a script that I run on fresh Kali spinups, and these are the tools I tend
 - [smbmap](https://www.kali.org/tools/smbmap/) - allows users to enumerate samba share drives across an entire domain
 - [sublime-text](https://www.sublimetext.com/)- text editor 
 - [terminator](https://gnome-terminator.org/) - a simple to use terminal emulator 
-- [wpscan](https://www.kali.org/tools/wpscan/) - scan a target WordPress URL and enumerate any plugins that are installed
 
 #### Lately removed
 These have been removed due to changes with bloodhound. 
-- [bloodhound](https://www.kali.org/tools/bloodhound/) - (changed to docker version) for visualizing Active Directory information 
+- [bloodhound](https://www.kali.org/tools/bloodhound/) - (changed to docker version) for visualizing Active Directory information
+- [enum4linux](https://www.kali.org/tools/enum4linux/) - a tool for enumerating information from Windows and Samba systems remotely
+- [hekatomb](https://www.kali.org/tools/hekatomb/)- a Python script that connects to an LDAP directory to retrieve all computers and users’ information in order to decrypt DPAPI blobs 
 - [neo4j](https://neo4j.com/)- graph and database management, you need it to run BloodHound
+- [kerberoast](https://www.kali.org/tools/kerberoast/) - for kerberoasting, though you can probably just use a combination of other tools, impacket in particular
+- [peass](https://www.kali.org/tools/peass-ng/) - well-known privilege escalation scripts for Windows and Linux (and MacOS)
 - pspy - I have been recieving errors even after updating the apt respository
 - wsgidav - I have been using other tools
 - gcc-go - seemed to have conflicts with golang-go
+- [wpscan](https://www.kali.org/tools/wpscan/) - scan a target WordPress URL and enumerate any plugins that are installed
 - [wsgidav](https://www.kali.org/tools/wsgidav/)- a generic and extendable WebDAV server
 
 
@@ -58,6 +57,7 @@ These have been removed due to changes with bloodhound.
 - [git-dumper](https://github.com/arthaud/git-dumper) - Dumps git repos from the web, especially useful for those which aren't easily cloned with `git`.
 - [verybasicenum](https://github.com/pentestpop/verybasicenum) - My personal custom enumeration scripts. Simpler and faster than winpeas/linpeas though much less detail. I like to run them first, then the more detailed scripts after.
 - [Kerbrute](https://github.com/ropnop/kerbrute)- for brute forcing Kerberos.
+- [Ligolo-ng](https://github.com/nicocha30/ligolo-ng) - Port forwarding
 
 ### Other Tools
 - Signal

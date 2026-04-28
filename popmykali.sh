@@ -12,7 +12,7 @@ printf '============================================================\n\n'
 # Install Required Utilities
 apt update;
 apt full-upgrade -y;
-apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go pip pipx python-is-python3 wget zsh
+apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go locate pip pipx python-is-python3 wget zsh
 
 # Adding Repo Keys
 ## Sublime-Text

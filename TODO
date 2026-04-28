@@ -1,5 +1,6 @@
 3/14/26
 
+!. "installing some tools" breaks because "unable to locate package code"
 1. For Debian maybe add -  locate python3-pip python3-venv
 2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
         2.5 If it doesn't work next time ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`

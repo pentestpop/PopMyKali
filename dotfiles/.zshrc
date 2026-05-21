@@ -92,11 +92,11 @@ export LESS_TERMCAP_ue=$'\E[0m'
 # Required by something else
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-# Created by `pipx` on 2025-11-12 18:47:30
-export PATH="$PATH:/home/cgrigsby/.local/bin"
+# Created by `pipx` on 2025-11-12 18:47:30 - since changed to make it user-agnostic
+export PATH="$PATH:/$HOME/.local/bin"
 
-# added manually for HTTPX install https://github.com/projectdiscovery/httpx
-export PATH="/home/pop/go/bin:$PATH"
+# added manually for HTTPX install https://github.com/projectdiscovery/httpx - since changed to make it user-agnostic
+export PATH="$HOME/go/bin:$PATH""
 
 #minty
 #export GOPATH=/root/go
@@ -118,14 +118,14 @@ alias ipaddr='curl -s -4 ifconfig.co/json | jq'
 alias ipaddr6='curl -s -6 ifconfig.co/json | jq'
 alias ip='ip --color=auto'
 # alias lsd='lsd --group-dirs=first'
+alias teams='/usr/bin/teams-for-linux --disable-gpu --disable-software-rasterizer'
+alias attack='qemu-system-x86_64 -enable-kvm -drive file=mydisk.qcow2,format=qcow2 boot c -m 8G -smp 2 -cpu host -vga virtio -net nic -net user'
 
 # Pop Functions 
 function mkcd() { mkdir -p "$1" && cd "$1"; }
-mousepad() {
-    # 'command' ensures we run the actual binary and not this function recursively
-    # "$@" expands to all arguments (preserving spaces and quotes)
-    command mousepad "$@" &
-}
+mousepad() { command mousepad "$@" & }
+trim() { echo "$1" | tr -d '[:space:]'; }
+caps() { echo "$*" | tr '[:lower:]' '[:upper:]' }
 
 # Pop Prompt - Redundant with theme
 #PROMPT='%F{#7AE7C7}%B%~%b

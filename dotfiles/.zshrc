@@ -12,7 +12,9 @@ ZSH_THEME="xiong-chiamiov"
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Plugins must be defined BEFORE sourcing oh-my-zsh.sh
 plugins=(
-  git 
+  colored-man-pages
+  git
+  extract 
   zsh-autosuggestions 
   zsh-syntax-highlighting
 )
@@ -156,4 +158,4 @@ elif [ -f /usr/share/fzf/key-bindings.zsh ]; then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
 fi
-
+export LIBVIRT_DEFAULT_URI="qemu:///system"

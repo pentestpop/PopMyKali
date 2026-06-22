@@ -102,6 +102,14 @@ printf '============================================================\n\n'
 
 gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
 
+printf '\n============================================================\n'
+printf '[+] Metasploting\n'
+printf '============================================================\n\n'
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall
+chmod 755 /tmp/msfinstall
+/tmp/msfinstall
+rm /tmp/msfinstall
+
 updatedb
 
 cat << EOF

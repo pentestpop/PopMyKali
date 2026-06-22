@@ -1,41 +1,28 @@
-6/22/2026
-1. Add qob theme (to ~/.themes/qob), posy cursor to ~/.icons, kora to ~/.icons
 
-3/14/26
-
-!. "installing some tools" breaks because "unable to locate package code" check - https://code.visualstudio.com/docs/setup/linux
-1. For Debian maybe add -  locate python3-pip python3-venv
+As of 6/22/26
+1. - fix uv
+        curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
+        uv tool install git+https://github.com/blacklanternsecurity/impacket --python $(which python3)
 2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
         2.5 If it doesn't work next time ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
-3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
-- `sed -i '3 s/$/ contrib/' /etc/apt/sources.list` and `apt install fonts-ibm-plex` at the bottom
-4. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
-        4.5 and disable "Paste the current selection when middle-click is pressed"
-5. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git` `mkdir ~/.config/bloodhound`  `cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.`
-6. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
-7. sudo apt install copyq, flameshot
-8. Shortcuts for copyq and flameshot
-EX:
-```
-gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0', 'custom1']"
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name 'Flameshot'
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'flameshot gui'
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Shift><Alt>dollar']"
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name 'CopyQ Show'
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'copyq show'
-gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Shift><Alt>c']"
-```
+3. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git` `mkdir ~/.config/bloodhound`  `cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.`
+4. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
 
 Maybe one day: 
-1. (Debian - XFCE) Fix background image and xfce settings which are out of date
+1. Add background image
 2. Move Burp, Terminator, Sublime, VS-Code to panel
-3. Add to .config/sublime-text/Packages/User/Preferences.sublime-settings
+3.  Differentiate between Arch and Debian (or just make another Arch Script?)
 
-        {
-          "hot_exit": false,
-          "remember_open_files": false
-        }
-4.  Differentiate between Arch and Debian (or just make another Arch Script?)
+Done on 6/22/2026
+1. Add qob theme (to ~/.themes/qob), posy cursor to ~/.icons, kora to ~/.icons
+2. "installing some tools" breaks because "unable to locate package code" check - https://code.visualstudio.com/docs/setup/linux
+(fixed bc Debian) 3. `sudo nano /etc/apt/sources.list` and add "contrib" to the end of line 3 like "trixie main non-free-firmware contrib" and then `sudo apt update` and then `sudo apt install fonts-ibm-plex`
+- `sed -i '3 s/$/ contrib/' /etc/apt/sources.list` and `apt install fonts-ibm-plex` at the bottom
+3. For Debian maybe add -  locate python3-pip python3-venv
+4. - Debian "Disable tap to click" and enable "Use multiple finger for right and middle click" on Touchpad
+        4.5 and disable "Paste the current selection when middle-click is pressed"
+5. Added `flameshot gui` shortcut
+6. Added flameshot to script
 
 # Done as of 3/13/26
 - Removed from `apt install`: autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass python3-pip python3-venv wpscan

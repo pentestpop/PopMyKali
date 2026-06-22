@@ -43,6 +43,7 @@ git clone https://github.com/cddmp/enum4linux-ng.git
 git clone https://github.com/ivan-sincek/php-reverse-shell.git
 git clone https://github.com/arthaud/git-dumper.git
 git clone https://github.com/nicocha30/ligolo-ng.git
+git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git 
 
 printf '\n============================================================\n'
 printf '[+] Building Kerbrute\n'
@@ -68,19 +69,14 @@ sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile
 cd /opt/kerbrute && make linux
 
 printf '\n============================================================\n'
-printf '[+] Installing pipx tools\n'
+printf '[+] Installing BLS tools\n'
 printf '============================================================\n\n'
-
+#BBOT
 pipx install git+https://github.com/blacklanternsecurity/NetExec
 pipx install bbot
-
-printf '\n============================================================\n'
-printf '[+] Installing impacket via uv\n'
-printf '============================================================\n\n'
-
-curl -LsSf https://astral.sh/uv/install.sh | sh
-export PATH="$TARGET_HOME/.local/bin:$PATH"
-uv tool install git+https://github.com/blacklanternsecurity/impacket
+#Impacket
+curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
+uv tool install git+https://github.com/blacklanternsecurity/impacket --python $(which python3)
 
 printf '\n============================================================\n'
 printf '[+] Installing httpx via go\n'
@@ -96,6 +92,9 @@ usermod -aG docker "$TARGET_USER"
 systemctl enable --now docker
 mkdir -p /opt/bloodhoundce && cd /opt/bloodhoundce
 wget -q -O docker-compose.yml https://ghst.ly/getbhce
+mkdir ~/.config/bloodhound  
+cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.
+
 
 printf '\n============================================================\n'
 printf '[+] Unzipping RockYou\n'

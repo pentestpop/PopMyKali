@@ -14,12 +14,15 @@ printf '============================================================\n\n'
 # Install Required Utilities
 apt update;
 apt full-upgrade -y;
-apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go locate pip pipx python-is-python3 wget zsh
+apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go pipx python3-pip python-is-python3 wget zsh
 
 # Adding Repo Keys
 ## VS Code
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -;
-add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main";
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+## Signal-Desktop
+curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" > /etc/apt/sources.list.d/signal-xenial.list
 
 #install github repositories
 printf '\n============================================================\n'
@@ -34,7 +37,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install bat code flameshot fzf libreoffice nmap plocate terminator;
+apt install bat code flameshot fzf libreoffice nmap locate signal-desktop terminator;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations

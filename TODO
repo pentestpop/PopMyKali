@@ -1,3 +1,6 @@
+6/22/2026
+1. Add qob theme (to ~/.themes/qob), posy cursor to ~/.icons, kora to ~/.icons
+
 3/14/26
 
 !. "installing some tools" breaks because "unable to locate package code" check - https://code.visualstudio.com/docs/setup/linux

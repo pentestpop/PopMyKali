@@ -1,12 +1,4 @@
-
 As of 6/22/26
-1. - fix uv
-        curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
-        uv tool install git+https://github.com/blacklanternsecurity/impacket --python $(which python3)
-2. `curl -LsSf https://astral.sh/uv/install.sh | sh` then `git clone https://github.com/blacklanternsecurity/impacket.git` then `cd impacket` then `uv tool install .`
-        2.5 If it doesn't work next time ^ needs /home/$USER/.local/bin/uv to run so maybe `export PATH="/home/$USER/.local/bin:$PATH"`
-3. `git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git` `mkdir ~/.config/bloodhound`  `cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.`
-4. Fix msfconsole install for Debian - sudo apt install snapd, sudo snap install snapd, sudo snap install metasploit-framework
 
 Maybe one day: 
 1. Add background image
@@ -23,6 +15,9 @@ Done on 6/22/2026
         4.5 and disable "Paste the current selection when middle-click is pressed"
 5. Added `flameshot gui` shortcut
 6. Added flameshot to script
+7. Hopefully fixed uv install and bls specific impacket
+8. Added github.com/ZephrFish/Bloodhound-CustomQueries
+9. Added metasploit
 
 # Done as of 3/13/26
 - Removed from `apt install`: autorecon burpsuite enum4linux hekatomb kerberoast name-that-hash peass python3-pip python3-venv wpscan

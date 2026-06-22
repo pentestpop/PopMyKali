@@ -37,7 +37,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install bat code flameshot fzf libreoffice nmap locate signal-desktop terminator;
+apt install bat code copyq flameshot fzf libreoffice nmap locate signal-desktop terminator;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations
@@ -97,15 +97,33 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
     su - "$TARGET_USER" -c "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
 
+    # CopyQ Autostart
+    mkdir -p "$TARGET_HOME/.config/autostart"
+    cat > "$TARGET_HOME/.config/autostart/copyq.desktop" << 'EOF'
+[Desktop Entry]
+Type=Application
+Name=CopyQ
+Exec=copyq
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+EOF
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.config/autostart"
+
     ## Touchpad Settings
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.peripherals.touchpad tap-to-click false" #disable tap-to-click
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.peripherals.touchpad click-method 'fingers'" # use multiple finger for right and middle click"
     su - "$TARGET_USER" -c "gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false" #disable "Paste the current selection when middle-click is pressed"
-
+    ## Shortcuts
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings custom-list \"['custom0', 'custom1']\""
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name 'Flameshot'"
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'flameshot gui'"
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding \"['<Shift><Alt>dollar']\""
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name 'CopyQ'"
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'copyq show'"
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding \"['<Ctrl><Alt>h']\""
+
+else
 
 else
     echo "Skipping poptimization."

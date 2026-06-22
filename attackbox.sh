@@ -8,21 +8,13 @@ fi
 TARGET_USER=${SUDO_USER:-$(logname)}
 TARGET_HOME=$(getent passwd "$TARGET_USER" | cut -d: -f6)
 
-printf '\n============================================================\n'
-printf '[+] Adding new repos\n'
-printf '============================================================\n\n'
-
-# Sublime Text
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg
-echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
-
 apt update
 
 printf '\n============================================================\n'
 printf '[+] Installing new apt tools\n'
 printf '============================================================\n\n'
 
-apt install -y gobuster krb5-user onesixtyone remmina rlwrap smbmap sqlmap sublime-text
+apt install -y feroxbuster gobuster rlwrap smbmap sqlmap
 
 printf '\n============================================================\n'
 printf '[+] Cloning new GitHub repos\n'
@@ -31,16 +23,8 @@ printf '============================================================\n\n'
 cd /opt
 
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
-git clone https://github.com/Flangvik/SharpCollection.git
-git clone https://github.com/61106960/adPEAS.git
 git clone https://github.com/brightio/penelope.git
-git clone https://github.com/antonioCoco/ConPtyShell.git
 git clone https://github.com/diego-treitos/linux-smart-enumeration.git
-git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git
-git clone https://github.com/pentestpop/autoNTDS.git
-git clone https://github.com/pentestpop/ARMincursore.git
-git clone https://github.com/cddmp/enum4linux-ng.git
-git clone https://github.com/ivan-sincek/php-reverse-shell.git
 git clone https://github.com/arthaud/git-dumper.git
 git clone https://github.com/nicocha30/ligolo-ng.git
 git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git 
@@ -50,22 +34,7 @@ printf '[+] Building Kerbrute\n'
 printf '============================================================\n\n'
 
 git clone https://github.com/ropnop/kerbrute.git
-
-echo "For kerbrute, please choose the ARCHS option:"
-echo "1) ARCHS=arm64"
-echo "2) ARCHS=amd64"
-read -p "Enter your choice (1 or 2): " choice
-
-if [ "$choice" == "1" ]; then
-    replacement="ARCHS=arm64"
-elif [ "$choice" == "2" ]; then
-    replacement="ARCHS=amd64 386"
-else
-    echo "Invalid choice. Exiting."
-    exit 1
-fi
-
-sed -i "2s/.*/$replacement/" /opt/kerbrute/Makefile
+sed -i "2s/.*/ARCHS=amd64/" /opt/kerbrute/Makefile
 cd /opt/kerbrute && make linux
 
 printf '\n============================================================\n'

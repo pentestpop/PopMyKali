@@ -98,7 +98,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export PATH="$PATH:/$HOME/.local/bin"
 
 # added manually for HTTPX install https://github.com/projectdiscovery/httpx - since changed to make it user-agnostic
-export PATH="$HOME/go/bin:$PATH""
+export PATH="$HOME/go/bin:$PATH"
 
 #minty
 #export GOPATH=/root/go

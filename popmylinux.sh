@@ -14,7 +14,7 @@ printf '============================================================\n\n'
 # Install Required Utilities
 apt update;
 apt full-upgrade -y;
-apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go pipx python3-pip python-is-python3 wget zsh
+apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go pipx python3-pip python3-venv python-is-python3 wget zsh
 
 # Adding Repo Keys
 ## VS Code
@@ -96,6 +96,16 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     rm -rf /tmp/posy-improved-cursor-linux
     chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
     su - "$TARGET_USER" -c "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
+
+    ## Touchpad Settings
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.peripherals.touchpad tap-to-click false" #disable tap-to-click
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.peripherals.touchpad click-method 'fingers'" # use multiple finger for right and middle click"
+    su - "$TARGET_USER" -c "gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false" #disable "Paste the current selection when middle-click is pressed"
+
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings custom-list \"['custom0', 'custom1']\""
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name 'Flameshot'"
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'flameshot gui'"
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding \"['<Shift><Alt>dollar']\""
 
 else
     echo "Skipping poptimization."

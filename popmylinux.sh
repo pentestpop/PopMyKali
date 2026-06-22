@@ -34,7 +34,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install bat code fzf libreoffice nmap plocate terminator;
+apt install bat code flameshot fzf libreoffice nmap plocate terminator;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations
@@ -52,14 +52,10 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     git clone https://github.com/pentestpop/PopScripts.git /opt/PopScripts
     # PopScripts symbolic links
     chmod +x /opt/PopScripts/link.sh && bash /opt/PopScripts/link.sh;
-    
-    # append custom aliases etc. to .zshrc
-    # cat /opt/PopMyKali/zshrc_additions.txt >> ~/.zshrc;
-    
-    # copy orville.jpg to ~/Pictures/. so you have a test photo
-    cp /opt/PopMyKali/images/landscape_wallpaper.jpg $TARGET_HOME/Pictures/landscape_wallpaper.jpg;
-    cp /opt/PopMyKali/images/pop_background_black.svg $TARGET_HOME/Pictures/pop_background_black.svg;
-    cp /opt/PopMyKali/images/orville.jpg $TARGET_HOME/Pictures/orville.jpg
+ 
+    # copy images folder to ~/Pictures/
+    cp -r /opt/PopMyKali/images/. $TARGET_HOME/Pictures/
+    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/Pictures/
     
     # create a symlink for verybasicnamp/vbnmap.sh
     chmod +x /opt/verybasicenum/vbnmap.sh;
@@ -71,15 +67,32 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     wget https://git.io/v5Zww -O $TARGET_HOME"/.config/terminator/plugins/terminator-themes.py";
     cp /opt/PopMyKali/dotfiles/themeproject/terminatorconfig ~/.config/terminator/config;
     
-    
     # Install oh-my-zsh:
     RUNASROOT=1 su - "$TARGET_USER" -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
     su - "$TARGET_USER" -c "git clone https://github.com/zsh-users/zsh-autosuggestions $TARGET_HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     su - "$TARGET_USER" -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting $TARGET_HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     
     # Icons and Themes
-    mkdir -p ~/.themes && cd /tmp && wget https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip && unzip CBlue.zip -d ~/.themes/ && rm /tmp/CBlue.zip && gsettings set org.cinnamon.theme name 'CBlue'
-    mkdir -p ~/.icons && cd /tmp && git clone https://github.com/bikass/kora.git && cp -r kora/kora ~/.icons/ && rm -rf kora && gsettings set org.cinnamon.desktop.interface icon-theme 'kora'
+    # Download, install, and apply the  qob theme
+    mkdir -p $TARGET_HOME/.themes
+    cd /tmp && git clone --depth=1 https://github.com/linuxmint/cinnamon-spices-themes.git
+    cp -r /tmp/cinnamon-spices-themes/qob/files/qob $TARGET_HOME/.themes/
+    rm -rf /tmp/cinnamon-spices-themes
+    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.themes
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.theme name 'qob'"
+    # Downloads, install, and apply kora icons
+    mkdir -p $TARGET_HOME/.icons
+    cd /tmp && git clone --depth=1 https://github.com/bikass/kora.git
+    cp -r /tmp/kora/kora $TARGET_HOME/.icons/
+    rm -rf /tmp/kora
+    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
+    su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.interface icon-theme 'kora'"
+    # Download, install, and apply Posy-Cursor
+    cd /tmp && git clone --depth=1 https://github.com/simtrami/posy-improved-cursor-linux.git
+    cp -r /tmp/posy-improved-cursor-linux/Posy_Cursor $TARGET_HOME/.icons/
+    rm -rf /tmp/posy-improved-cursor-linux
+    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
+    su - "$TARGET_USER" -c "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
 
 else
     echo "Skipping poptimization."

@@ -27,7 +27,8 @@ git clone https://github.com/brightio/penelope.git
 git clone https://github.com/diego-treitos/linux-smart-enumeration.git
 git clone https://github.com/arthaud/git-dumper.git
 git clone https://github.com/nicocha30/ligolo-ng.git
-git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git 
+git clone https://github.com/ZephrFish/Bloodhound-CustomQueries.git
+git clone https://github.com/danielmiessler/SecLists.git /usr/share/seclists
 
 printf '\n============================================================\n'
 printf '[+] Building Kerbrute\n'

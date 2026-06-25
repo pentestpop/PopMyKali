@@ -49,6 +49,11 @@ curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin s
 uv tool install git+https://github.com/blacklanternsecurity/impacket --python $(which python3)
 
 printf '\n============================================================\n'
+printf '[+] Installing Penelope\n'
+printf '============================================================\n\n'
+pipx install git+https://github.com/brightio/penelope
+
+printf '\n============================================================\n'
 printf '[+] Installing httpx via go\n'
 printf '============================================================\n\n'
 

@@ -37,7 +37,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install bat code copyq flameshot fzf libreoffice nmap locate signal-desktop terminator;
+apt install bat code copyq flameshot fzf libreoffice nmap locate signal-desktop terminator tree;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations

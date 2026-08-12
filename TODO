@@ -3,12 +3,14 @@ Needs to be done:
 1. user not added to sudoers
 2. the signal line doesnt work with tee, tee has to be run with sudo 
 3. netexec can't be install with those commands bc aardwolf
+- needs sudo apt install rustc cargo -y
 4. rm plocate (unnecessary)
 5. pip install requests
 6. mousepad
 7. ~/.oh-my-zsh/oh-my-zsh.sh not found - has to be installed before plugins
 8. Burp Suite
 9. msfinstall commands (/tmp not ./tmp)
+
 
 
 Maybe one day: 

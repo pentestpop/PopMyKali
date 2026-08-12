@@ -5,6 +5,10 @@ Needs to be done:
 3. netexec can't be install with those commands bc aardwolf
 4. rm plocate (unnecessary)
 5. pip install requests
+6. mousepad
+7. ~/.oh-my-zsh/oh-my-zsh.sh not found - has to be installed before plugins
+8. Burp Suite
+
 
 Maybe one day: 
 1. Add background image

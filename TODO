@@ -1,4 +1,10 @@
-As of 6/22/26
+As of 8/12/26
+Needs to be done: 
+1. user not added to sudoers
+2. the signal line doesnt work with tee, tee has to be run with sudo 
+3. netexec can't be install with those commands bc aardwolf
+4. rm plocate (unnecessary)
+5. pip install requests
 
 Maybe one day: 
 1. Add background image

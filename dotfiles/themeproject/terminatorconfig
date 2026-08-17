@@ -3,6 +3,9 @@
   enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
   ask_before_closing = never
 [keybindings]
+  go_prev = ""
+  split_horiz = <Primary><Shift>o
+  split_vert = <Primary><Shift>p
 [profiles]
   [[default]]
     background_color = "#010A21"

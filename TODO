@@ -10,6 +10,7 @@ Needs to be done:
 7. ~/.oh-my-zsh/oh-my-zsh.sh not found - has to be installed before plugins
 8. Burp Suite
 9. msfinstall commands (/tmp not ./tmp)
+10. copyQ
 
 
 

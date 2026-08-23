@@ -6,6 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 TARGET_USER=${SUDO_USER:-$(logname)}
 TARGET_HOME=$(getent passwd "$TARGET_USER" | cut -d: -f6)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 printf '\n============================================================\n'
 printf '[+] Let'\''s get it poppin\n'
@@ -14,7 +15,7 @@ printf '============================================================\n\n'
 # Install Required Utilities
 apt update;
 apt full-upgrade -y;
-apt install apt-transport-https curl docker.io docker-compose git gnupg2 golang-go pipx python3-pip python3-venv python-is-python3 wget zsh
+apt install apt-transport-https curl docker.io docker-compose-plugin git gnupg2 golang-go pipx python3-pip python3-venv python-is-python3 wget zsh
 
 # Adding Repo Keys
 ## VS Code
@@ -23,6 +24,14 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packa
 ## Signal-Desktop
 curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" > /etc/apt/sources.list.d/signal-xenial.list
+## Kali (last-snapshot, pinned below Debian so it's only used for packages Debian doesn't have)
+curl -fsSL https://archive.kali.org/archive-key.asc | gpg --dearmor -o /usr/share/keyrings/kali-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-last-snapshot main contrib non-free non-free-firmware" > /etc/apt/sources.list.d/kali.list
+cat > /etc/apt/preferences.d/kali.pref << 'EOF'
+Package: *
+Pin: release a=kali-last-snapshot
+Pin-Priority: 50
+EOF
 
 #install github repositories
 printf '\n============================================================\n'
@@ -37,7 +46,7 @@ printf '\n============================================================\n'
 printf '[+] Installing some tools:\n'
 printf '============================================================\n\n'
 apt update
-apt install bat code copyq flameshot fzf libreoffice nmap locate signal-desktop terminator tree;
+apt install bat code copyq flameshot fzf libreoffice nmap plocate signal-desktop terminator tree;
 pipx install name-that-hash;
 
 # Ask the user if they want to additional customizations
@@ -57,7 +66,7 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     chmod +x /opt/PopScripts/link.sh && bash /opt/PopScripts/link.sh;
  
     # copy images folder to ~/Pictures/
-    cp -r /opt/PopMyKali/images/. $TARGET_HOME/Pictures/
+    cp -r $SCRIPT_DIR/images/. $TARGET_HOME/Pictures/
     chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/Pictures/
     
     # create a symlink for verybasicnamp/vbnmap.sh
@@ -65,16 +74,26 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     ln -s /opt/verybasicenum/vbnmap.sh /usr/local/bin/vbnmap;
     
     # customize terminator
-    pip install requests;
+    apt install -y python3-requests;
     mkdir -p $TARGET_HOME/.config/terminator/plugins;
     wget https://git.io/v5Zww -O $TARGET_HOME"/.config/terminator/plugins/terminator-themes.py";
-    cp /opt/PopMyKali/dotfiles/themeproject/terminatorconfig ~/.config/terminator/config;
-    
+    cp $SCRIPT_DIR/dotfiles/themeproject/terminatorconfig $TARGET_HOME/.config/terminator/config;
+    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.config/terminator;
+
     # Install oh-my-zsh:
-    RUNASROOT=1 su - "$TARGET_USER" -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+    # RUNZSH=no/CHSH=no keep this from launching an interactive zsh shell or
+    # prompting for a password mid-script; the installer's own tty-detection
+    # can't be trusted here since stdin isn't piped away.
+    su - "$TARGET_USER" -c 'RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
     su - "$TARGET_USER" -c "git clone https://github.com/zsh-users/zsh-autosuggestions $TARGET_HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     su - "$TARGET_USER" -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting $TARGET_HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-    
+    usermod --shell "$(which zsh)" "$TARGET_USER"
+
+    # Deploy the custom .zshrc. Must happen after the oh-my-zsh install above,
+    # otherwise its installer would back up/replace it with its own template.
+    cp $SCRIPT_DIR/dotfiles/.zshrc $TARGET_HOME/.zshrc;
+    chown "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.zshrc;
+
     # Icons and Themes
     # Download, install, and apply the  qob theme
     mkdir -p $TARGET_HOME/.themes
@@ -122,8 +141,6 @@ EOF
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name 'CopyQ'"
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'copyq show'"
     su - "$TARGET_USER" -c "gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding \"['<Ctrl><Alt>h']\""
-
-else
 
 else
     echo "Skipping poptimization."

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root. Use sudo!"
+   echo "This script must be run as root. Use sudo! `usermod -aG sudo <username>`"
    exit 1
 fi
 TARGET_USER=${SUDO_USER:-$(logname)}

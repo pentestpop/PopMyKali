@@ -23,7 +23,7 @@ printf '============================================================\n\n'
 # Install Required Utilities
 apt update;
 apt full-upgrade -y;
-apt install -y apt-transport-https curl docker.io docker-compose-plugin git gnupg2 golang-go pipx python3-pip python3-venv python-is-python3 wget zsh
+apt install -y apt-transport-https curl docker.io git gnupg2 golang-go pipx python3-pip python3-venv python-is-python3 wget zsh
 
 # Let the user run docker without sudo (group is created by docker.io)
 getent group docker >/dev/null && usermod -aG docker "$TARGET_USER"

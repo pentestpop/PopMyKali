@@ -65,6 +65,7 @@ usermod -aG docker "$TARGET_USER"
 systemctl enable --now docker
 mkdir -p /opt/bloodhoundce && cd /opt/bloodhoundce
 wget -q -O docker-compose.yml https://ghst.ly/getbhce
+echo "BLOODHOUND_PORT=7070" > .env
 mkdir ~/.config/bloodhound  
 cp /opt/Bloodhound-CustomQueries/customqueries.json ~/.config/bloodhound/.
 

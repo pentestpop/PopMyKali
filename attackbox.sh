@@ -196,8 +196,9 @@ cat << EOF
 
 export GOPATH=\$HOME/go
 export PATH=\$PATH:/usr/lib/go/bin:\$GOPATH/bin
-alias bh-start='cd /opt/bloodhoundce && docker-compose up -d'
-alias bh-stop='cd /opt/bloodhoundce && docker-compose stop'
-alias bh-ps='cd /opt/bloodhoundce && docker-compose ps'
+alias bh-start='cd /opt/bloodhoundce && docker compose up -d'
+alias bh-stop='cd /opt/bloodhoundce && docker compose stop'
+alias bh-ps='cd /opt/bloodhoundce && docker compose ps'
+alias bh-restart='cd /opt/bloodhoundce && docker compose down && docker compose up -d'
 
 EOF

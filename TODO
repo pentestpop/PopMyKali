@@ -1,5 +1,8 @@
-As of 8/12/26
+9/28/26
 Some of those have been done, but I need to make sure we add rockyou.txt to the attackbox as well
+And we need to make sure to be able to run evil-winrm and impacket not from opt
+
+As of 8/12/26
 Needs to be done: 
 1. user not added to sudoers
 2. the signal line doesnt work with tee, tee has to be run with sudo 

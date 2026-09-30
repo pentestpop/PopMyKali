@@ -1,6 +1,8 @@
 9/28/26
 Some of those have been done, but I need to make sure we add rockyou.txt to the attackbox as well
 And we need to make sure to be able to run evil-winrm and impacket not from opt
+For attackbox.sh - need bls-internal-plugins and ghidra, dnspy, radar2
+apt install redis-tools postgresql-client, ilspy, 
 
 As of 8/12/26
 Needs to be done: 

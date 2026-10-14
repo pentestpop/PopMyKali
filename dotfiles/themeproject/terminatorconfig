@@ -9,7 +9,7 @@
 [profiles]
   [[default]]
     background_color = "#010A21"
-    background_darkness = 0.95
+    background_darkness = 1.00
     background_type = transparent
     foreground_color = "#F6EFEE"
     scrollback_lines = 5000

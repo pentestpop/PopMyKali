@@ -110,7 +110,7 @@ KPREF
 
     apt update
     apt install -y \
-        curl exploitdb feroxbuster gobuster golang-go ligolo-ng pipx \
+        build-essential curl exploitdb feroxbuster gobuster golang-go ligolo-ng pipx \
         python3-venv rlwrap seclists smbmap sqlmap wget wordlists
 
     # Clone repos to ~/tools
@@ -141,17 +141,24 @@ KPREF
     as_user "cd '$TOOLS_DIR/kerbrute' && make linux"
     cp "$TOOLS_DIR/kerbrute/dist/kerbrute_linux_amd64" /usr/local/bin/kerbrute
 
-    # pipx + uv tools
-    banner "BLS tools (pipx + uv)"
+    # pipx tools
+    banner "BLS tools (pipx)"
     as_user "pipx ensurepath"
     as_user "pipx install --force git+https://github.com/blacklanternsecurity/NetExec"
     as_user "pipx install --force bbot"
     as_user "pipx install --force git+https://github.com/brightio/penelope"
 
-    if ! as_user "command -v uv" &>/dev/null; then
-        as_user "curl -LsSf https://astral.sh/uv/install.sh | sh"
+    # Upstream impacket — the default in PATH
+    as_user "pipx install --force impacket"
+
+    # BLS impacket fork — standalone venv so it won't override upstream in PATH
+    banner "BLS Impacket fork (standalone)"
+    if [ ! -d "$TOOLS_DIR/impacket-bls" ]; then
+        git clone https://github.com/blacklanternsecurity/impacket.git "$TOOLS_DIR/impacket-bls"
     fi
-    as_user "uv tool install git+https://github.com/blacklanternsecurity/impacket --python \"\$(which python3)\""
+    python3 -m venv "$TOOLS_DIR/impacket-bls/.venv"
+    "$TOOLS_DIR/impacket-bls/.venv/bin/pip" install "$TOOLS_DIR/impacket-bls/" 2>/dev/null || true
+    chown -R "$TARGET_USER:$TARGET_USER" "$TOOLS_DIR/impacket-bls"
 
     # httpx
     banner "httpx (go install)"
@@ -469,6 +476,10 @@ if $run_attack; then
   alias bh-stop='cd ~/tools/bloodhoundce && docker compose stop'
   alias bh-ps='cd ~/tools/bloodhoundce && docker compose ps'
   alias bh-restart='cd ~/tools/bloodhoundce && docker compose down && docker compose up -d'
+
+  # BLS impacket fork (upstream impacket is the default in PATH)
+  # Creates bls-secretsdump, bls-ntlmrelayx, bls-psexec, etc.
+  for t in ~/tools/impacket-bls/.venv/bin/*.py; do alias "bls-$(basename "$t" .py)"="$t"; done
 BHALIAS
 fi
 

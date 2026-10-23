@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-TOOLS_DIR="$HOME/pentest-tools"
+TOOLS_DIR="$HOME/tools"
 mkdir -p "$TOOLS_DIR"
 
 echo "=== System packages ==="
@@ -135,12 +135,12 @@ echo "========================================="
 echo ""
 cat <<'ALIASES'
 # Pentest Tools
-alias Responder='sudo ~/pentest-tools/Responder/.venv/bin/python ~/pentest-tools/Responder/Responder.py'
-alias itwasalladream='~/pentest-tools/ItWasAllADream/.venv/bin/itwasalladream'
-alias noPac='~/pentest-tools/noPac/.venv/bin/python ~/pentest-tools/noPac/noPac.py'
-alias bluekeep='~/pentest-tools/detect_bluekeep/.venv/bin/python ~/pentest-tools/detect_bluekeep/detect_bluekeep.py'
-alias zerologon='~/pentest-tools/CVE-2020-1472/.venv/bin/python ~/pentest-tools/CVE-2020-1472/zerologon_tester.py'
-alias cve-2023-20198='~/pentest-tools/CVE-2023-20198/.venv/bin/python ~/pentest-tools/CVE-2023-20198/exploit.py'
+alias Responder='sudo ~/tools/Responder/.venv/bin/python ~/tools/Responder/Responder.py'
+alias itwasalladream='~/tools/ItWasAllADream/.venv/bin/itwasalladream'
+alias noPac='~/tools/noPac/.venv/bin/python ~/tools/noPac/noPac.py'
+alias bluekeep='~/tools/detect_bluekeep/.venv/bin/python ~/tools/detect_bluekeep/detect_bluekeep.py'
+alias zerologon='~/tools/CVE-2020-1472/.venv/bin/python ~/tools/CVE-2020-1472/zerologon_tester.py'
+alias cve-2023-20198='~/tools/CVE-2023-20198/.venv/bin/python ~/tools/CVE-2023-20198/exploit.py'
 ALIASES
 
 echo ""

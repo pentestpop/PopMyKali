@@ -1,35 +1,43 @@
 #!/bin/bash
-set -e
+# onsite.sh — standard checks and tools for client-site engagements.
+# For general attack box setup, see attackbox.sh.
 
-TOOLS_DIR="$HOME/tools"
+if [[ $EUID -ne 0 ]]; then
+    echo 'Run with sudo. (Need sudo? usermod -aG sudo <username>)'
+    exit 1
+fi
+
+TARGET_USER=${SUDO_USER:-$(logname)}
+TARGET_HOME=$(getent passwd "$TARGET_USER" | cut -d: -f6)
+TOOLS_DIR="$TARGET_HOME/tools"
+
+as_user() { su - "$TARGET_USER" -c "export PATH=\"$TARGET_HOME/.local/bin:$TARGET_HOME/go/bin:/usr/lib/go/bin:\$PATH\" && $1"; }
+
 mkdir -p "$TOOLS_DIR"
+chown "$TARGET_USER:$TARGET_USER" "$TOOLS_DIR"
 
 echo "=== System packages ==="
-sudo apt update
-sudo apt install -y nmap git python3 python3-venv python3-dev build-essential curl wget unzip pipx
+apt update
+apt install -y nmap git python3 python3-venv python3-dev build-essential curl wget unzip pipx
 
 echo "=== Metasploit ==="
 if ! command -v msfconsole &>/dev/null; then
-    echo "[!] metasploit-framework not found — not in stock Debian repos."
-    echo "[!] Quick install: curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall && chmod +x /tmp/msfinstall && sudo /tmp/msfinstall"
-    echo ""
-    read -p "    Install metasploit now? [y/N] " yn
+    echo "[!] metasploit-framework not found."
+    read -p "    Install now? [y/N] " yn
     if [[ "$yn" =~ ^[Yy]$ ]]; then
         curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall
         chmod +x /tmp/msfinstall
-        sudo /tmp/msfinstall
+        /tmp/msfinstall
+        rm -f /tmp/msfinstall
     fi
 fi
 
-echo "=== pipx ==="
-pipx ensurepath || true
-export PATH="$HOME/.local/bin:$PATH"
-
-echo "=== git-dumper ==="
-pipx install --force git-dumper
-
-echo "=== pre2k ==="
-pipx install --force git+https://github.com/garrettfoster13/pre2k
+echo "=== pipx tools ==="
+as_user "pipx ensurepath"
+as_user "pipx install --force git-dumper"
+as_user "pipx install --force git+https://github.com/garrettfoster13/pre2k"
+as_user "pipx install --force mitm6"
+as_user "pipx install --force impacket"
 
 echo "=== nuclei ==="
 if ! command -v nuclei &>/dev/null; then
@@ -48,65 +56,55 @@ if ! command -v nuclei &>/dev/null; then
         echo "[*] Downloading nuclei from $NUCLEI_URL"
         curl -sL "$NUCLEI_URL" -o /tmp/nuclei.zip
         unzip -o /tmp/nuclei.zip -d /tmp/nuclei_bin
-        sudo mv /tmp/nuclei_bin/nuclei /usr/local/bin/
+        mv /tmp/nuclei_bin/nuclei /usr/local/bin/
         rm -rf /tmp/nuclei.zip /tmp/nuclei_bin
     fi
 fi
-nuclei -update-templates || true
+as_user "nuclei -update-templates" || true
 
 echo "=== CVE-2023-20198 ==="
-if [ ! -d "$TOOLS_DIR/CVE-2023-20198" ]; then
-    git clone https://github.com/smokeintheshell/CVE-2023-20198.git "$TOOLS_DIR/CVE-2023-20198"
-fi
+[ -d "$TOOLS_DIR/CVE-2023-20198" ] || git clone https://github.com/smokeintheshell/CVE-2023-20198.git "$TOOLS_DIR/CVE-2023-20198"
 python3 -m venv "$TOOLS_DIR/CVE-2023-20198/.venv"
 "$TOOLS_DIR/CVE-2023-20198/.venv/bin/pip" install requests 2>/dev/null || true
 
 echo "=== ItWasAllADream ==="
-if [ ! -d "$TOOLS_DIR/ItWasAllADream" ]; then
-    git clone https://github.com/byt3bl33d3r/ItWasAllADream.git "$TOOLS_DIR/ItWasAllADream"
-fi
+[ -d "$TOOLS_DIR/ItWasAllADream" ] || git clone https://github.com/byt3bl33d3r/ItWasAllADream.git "$TOOLS_DIR/ItWasAllADream"
 python3 -m venv "$TOOLS_DIR/ItWasAllADream/.venv"
 "$TOOLS_DIR/ItWasAllADream/.venv/bin/pip" install impacket
 if ! "$TOOLS_DIR/ItWasAllADream/.venv/bin/pip" install "$TOOLS_DIR/ItWasAllADream/" 2>/dev/null; then
-    echo "[!] Project install failed (poetry build backend). Deps installed, run manually:"
+    echo "[!] ItWasAllADream project install failed (poetry backend). Deps installed; run manually:"
     echo "    cd $TOOLS_DIR/ItWasAllADream && .venv/bin/python -m itwasalladream ..."
 fi
 
 echo "=== mitm6 ==="
-pipx install --force mitm6
+# (installed via pipx above)
 
-echo "=== impacket (for ntlmrelayx) ==="
-pipx install --force impacket
+echo "=== impacket (upstream, for ntlmrelayx) ==="
+# (installed via pipx above)
 
 echo "=== BlueKeep ==="
-if [ ! -d "$TOOLS_DIR/detect_bluekeep" ]; then
-    git clone https://github.com/blacklanternsecurity/detect_bluekeep.py.git "$TOOLS_DIR/detect_bluekeep"
-fi
+[ -d "$TOOLS_DIR/detect_bluekeep" ] || git clone https://github.com/blacklanternsecurity/detect_bluekeep.py.git "$TOOLS_DIR/detect_bluekeep"
 python3 -m venv "$TOOLS_DIR/detect_bluekeep/.venv"
 "$TOOLS_DIR/detect_bluekeep/.venv/bin/pip" install impacket 2>/dev/null || true
 
 echo "=== ZeroLogon ==="
-if [ ! -d "$TOOLS_DIR/CVE-2020-1472" ]; then
-    git clone https://github.com/bvcyber/CVE-2020-1472.git "$TOOLS_DIR/CVE-2020-1472"
-fi
+[ -d "$TOOLS_DIR/CVE-2020-1472" ] || git clone https://github.com/bvcyber/CVE-2020-1472.git "$TOOLS_DIR/CVE-2020-1472"
 python3 -m venv "$TOOLS_DIR/CVE-2020-1472/.venv"
 "$TOOLS_DIR/CVE-2020-1472/.venv/bin/pip" install impacket 2>/dev/null || true
 
 echo "=== noPac ==="
-if [ ! -d "$TOOLS_DIR/noPac" ]; then
-    git clone https://github.com/Ridter/noPac.git "$TOOLS_DIR/noPac"
-fi
+[ -d "$TOOLS_DIR/noPac" ] || git clone https://github.com/Ridter/noPac.git "$TOOLS_DIR/noPac"
 python3 -m venv "$TOOLS_DIR/noPac/.venv"
 "$TOOLS_DIR/noPac/.venv/bin/pip" install -r "$TOOLS_DIR/noPac/requirements.txt" || true
 
 echo "=== Responder ==="
-if [ ! -d "$TOOLS_DIR/Responder" ]; then
-    git clone https://github.com/lgandx/Responder.git "$TOOLS_DIR/Responder"
-fi
+[ -d "$TOOLS_DIR/Responder" ] || git clone https://github.com/lgandx/Responder.git "$TOOLS_DIR/Responder"
 python3 -m venv "$TOOLS_DIR/Responder/.venv"
 if [ -f "$TOOLS_DIR/Responder/requirements.txt" ]; then
     "$TOOLS_DIR/Responder/.venv/bin/pip" install -r "$TOOLS_DIR/Responder/requirements.txt" || true
 fi
+
+chown -R "$TARGET_USER:$TARGET_USER" "$TOOLS_DIR"
 
 echo ""
 echo "========================================="
@@ -115,10 +113,10 @@ echo "========================================="
 echo -n "nmap:           "; command -v nmap &>/dev/null && nmap --version 2>/dev/null | head -1 || echo "MISSING"
 echo -n "msfconsole:     "; command -v msfconsole &>/dev/null && echo "OK" || echo "MISSING — install manually (see above)"
 echo -n "nuclei:         "; command -v nuclei &>/dev/null && nuclei --version 2>&1 | head -1 || echo "MISSING"
-echo -n "git-dumper:     "; command -v git-dumper &>/dev/null && echo "OK" || echo "MISSING"
-echo -n "pre2k:          "; command -v pre2k &>/dev/null && echo "OK" || echo "MISSING"
-echo -n "mitm6:          "; command -v mitm6 &>/dev/null && echo "OK" || echo "MISSING"
-echo -n "ntlmrelayx:     "; command -v ntlmrelayx.py &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "git-dumper:     "; as_user "command -v git-dumper" &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "pre2k:          "; as_user "command -v pre2k" &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "mitm6:          "; as_user "command -v mitm6" &>/dev/null && echo "OK" || echo "MISSING"
+echo -n "ntlmrelayx:     "; as_user "command -v ntlmrelayx.py" &>/dev/null && echo "OK" || echo "MISSING"
 echo -n "BlueKeep:       "; [ -f "$TOOLS_DIR/detect_bluekeep/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
 echo -n "ZeroLogon:      "; [ -f "$TOOLS_DIR/CVE-2020-1472/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"
 echo -n "noPac:          "; [ -f "$TOOLS_DIR/noPac/.venv/bin/python" ] && echo "OK (venv)" || echo "MISSING"

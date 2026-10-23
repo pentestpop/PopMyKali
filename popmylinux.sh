@@ -1,13 +1,14 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root. Use sudo! `usermod -aG sudo <username>`"
+   echo 'This script must be run as root. Use sudo! (usermod -aG sudo <username>)'
    exit 1
 fi
 TARGET_USER=${SUDO_USER:-$(logname)}
 TARGET_HOME=$(getent passwd "$TARGET_USER" | cut -d: -f6)
 TARGET_UID=$(id -u "$TARGET_USER")
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TOOLS_DIR="$TARGET_HOME/tools"
 
 # Run gsettings as the target user against their LIVE session bus so the
 # changes actually persist. `su -` starts a fresh login shell with no D-Bus
@@ -48,9 +49,10 @@ EOF
 printf '\n============================================================\n'
 printf '[+] Installing GitHub repos:\n'
 printf '============================================================\n\n'
-cd /opt;
+mkdir -p "$TOOLS_DIR"
 
-[ -d /opt/verybasicenum ] || git clone https://github.com/pentestpop/verybasicenum.git /opt/verybasicenum;
+[ -d "$TOOLS_DIR/verybasicenum" ] || git clone https://github.com/pentestpop/verybasicenum.git "$TOOLS_DIR/verybasicenum";
+chown -R "$TARGET_USER:$TARGET_USER" "$TOOLS_DIR"
 
 #install beloved tools
 printf '\n============================================================\n'
@@ -73,31 +75,32 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
     echo "Running the optimization script..."
     
     # PopScripts
-    [ -d /opt/PopScripts ] || git clone https://github.com/pentestpop/PopScripts.git /opt/PopScripts
+    [ -d "$TOOLS_DIR/PopScripts" ] || git clone https://github.com/pentestpop/PopScripts.git "$TOOLS_DIR/PopScripts"
+    chown -R "$TARGET_USER:$TARGET_USER" "$TOOLS_DIR/PopScripts"
     # PopScripts symbolic links
-    chmod +x /opt/PopScripts/link.sh && bash /opt/PopScripts/link.sh;
+    chmod +x "$TOOLS_DIR/PopScripts/link.sh" && bash "$TOOLS_DIR/PopScripts/link.sh";
  
     # copy images folder to ~/Pictures/
-    cp -r $SCRIPT_DIR/images/. $TARGET_HOME/Pictures/
-    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/Pictures/
+    cp -r "$SCRIPT_DIR/images/." "$TARGET_HOME/Pictures/"
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/Pictures/"
     
     # create a symlink for verybasicnamp/vbnmap.sh (-f so a re-run doesn't fail)
-    chmod +x /opt/verybasicenum/vbnmap.sh;
-    ln -sf /opt/verybasicenum/vbnmap.sh /usr/local/bin/vbnmap;
+    chmod +x "$TOOLS_DIR/verybasicenum/vbnmap.sh";
+    ln -sf "$TOOLS_DIR/verybasicenum/vbnmap.sh" /usr/local/bin/vbnmap;
     
     # customize terminator
     apt install -y python3-requests;
-    mkdir -p $TARGET_HOME/.config/terminator/plugins;
+    mkdir -p "$TARGET_HOME/.config/terminator/plugins";
     # git.io shut down (all links stopped redirecting 2022-04-29), so the old
     # `wget https://git.io/v5Zww` is dead. Pull the plugin from the repo instead.
     rm -rf /tmp/terminator-themes
     git clone --depth=1 https://github.com/EliverLara/terminator-themes.git /tmp/terminator-themes
     # Only terminator-themes.py (the >=1.9 version); the repo also ships
     # older-version.py, which must NOT be installed alongside it.
-    cp /tmp/terminator-themes/plugin/terminator-themes.py $TARGET_HOME/.config/terminator/plugins/terminator-themes.py
+    cp /tmp/terminator-themes/plugin/terminator-themes.py "$TARGET_HOME/.config/terminator/plugins/terminator-themes.py"
     rm -rf /tmp/terminator-themes
-    cp $SCRIPT_DIR/dotfiles/themeproject/terminatorconfig $TARGET_HOME/.config/terminator/config;
-    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.config/terminator;
+    cp "$SCRIPT_DIR/dotfiles/themeproject/terminatorconfig" "$TARGET_HOME/.config/terminator/config";
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.config/terminator";
 
     # Install oh-my-zsh:
     # Make sure zsh + git are actually present first — the installer aborts
@@ -120,33 +123,33 @@ if [[ "$user_input" =~ ^[Yy]([Ee][Ss])?$ ]]; then
         usermod --shell "$(which zsh)" "$TARGET_USER"
 
         # Deploy the custom .zshrc (safe now that --keep-zshrc left it alone).
-        cp $SCRIPT_DIR/dotfiles/.zshrc $TARGET_HOME/.zshrc;
-        chown "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.zshrc;
+        cp "$SCRIPT_DIR/dotfiles/.zshrc" "$TARGET_HOME/.zshrc";
+        chown "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.zshrc";
     fi
 
     # Icons and Themes
     # Download, install, and apply the  qob theme
-    mkdir -p $TARGET_HOME/.themes
+    mkdir -p "$TARGET_HOME/.themes"
     rm -rf /tmp/cinnamon-spices-themes
     cd /tmp && git clone --depth=1 https://github.com/linuxmint/cinnamon-spices-themes.git
-    cp -r /tmp/cinnamon-spices-themes/qob/files/qob $TARGET_HOME/.themes/
+    cp -r /tmp/cinnamon-spices-themes/qob/files/qob "$TARGET_HOME/.themes/"
     rm -rf /tmp/cinnamon-spices-themes
-    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.themes
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.themes"
     gset "set org.cinnamon.theme name 'qob'"
     # Downloads, install, and apply kora icons
-    mkdir -p $TARGET_HOME/.icons
+    mkdir -p "$TARGET_HOME/.icons"
     rm -rf /tmp/kora
     cd /tmp && git clone --depth=1 https://github.com/bikass/kora.git
-    cp -r /tmp/kora/kora $TARGET_HOME/.icons/
+    cp -r /tmp/kora/kora "$TARGET_HOME/.icons/"
     rm -rf /tmp/kora
-    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.icons"
     gset "set org.cinnamon.desktop.interface icon-theme 'kora'"
     # Download, install, and apply Posy-Cursor
     rm -rf /tmp/posy-improved-cursor-linux
     cd /tmp && git clone --depth=1 https://github.com/simtrami/posy-improved-cursor-linux.git
-    cp -r /tmp/posy-improved-cursor-linux/Posy_Cursor $TARGET_HOME/.icons/
+    cp -r /tmp/posy-improved-cursor-linux/Posy_Cursor "$TARGET_HOME/.icons/"
     rm -rf /tmp/posy-improved-cursor-linux
-    chown -R "$TARGET_USER:$TARGET_USER" $TARGET_HOME/.icons
+    chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.icons"
     gset "set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
 
     # CopyQ Autostart
